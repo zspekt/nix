@@ -130,7 +130,7 @@ hardware.nvidia = {
       tg
       telegram-desktop
       rofi-wayland
-      unstable.waybar
+      waybar
       pass-wayland
       # antidote
   #     tree
