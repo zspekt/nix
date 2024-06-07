@@ -12,7 +12,7 @@
     dotfiles = {
       flake = false;
       # url = "git+https://github.com/zspekt/dotfiles?submodules=1";
-      url = "./dotfiles";
+      url = "git+file:./dotfiles";
     };
 	};
 
