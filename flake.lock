@@ -3,19 +3,14 @@
     "dotfiles": {
       "flake": false,
       "locked": {
-        "lastModified": 1717756706,
-        "narHash": "sha256-xFERN37dXeBYN/iW+3o9VK3+Rr5x84euAECGJrFJJFc=",
-        "ref": "refs/heads/desktoparch",
-        "rev": "a23a89442447d9030196ce5a161be25cb09261eb",
-        "revCount": 93,
-        "submodules": true,
-        "type": "git",
-        "url": "https://github.com/zspekt/dotfiles"
+        "lastModified": 1,
+        "narHash": "sha256-pQpattmS9VmO3ZIQUFn66az8GSmB4IvYhTTCFn6SUmo=",
+        "path": "/nix/store/0z2j3i22292z0x4fsipd7146qbgiyd9x-source/dotfiles",
+        "type": "path"
       },
       "original": {
-        "submodules": true,
-        "type": "git",
-        "url": "https://github.com/zspekt/dotfiles"
+        "path": "/nix/store/0z2j3i22292z0x4fsipd7146qbgiyd9x-source/dotfiles",
+        "type": "path"
       }
     },
     "home-manager": {
