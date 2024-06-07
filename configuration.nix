@@ -113,6 +113,7 @@ hardware.nvidia = {
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
+
     users.users.zspekt = {
     shell = pkgs.zsh;
     isNormalUser = true;
@@ -125,6 +126,12 @@ hardware.nvidia = {
       zoxide
       wl-clipboard
       pass
+      discord-screenaudio
+      tg
+      telegram-desktop
+      rofi-wayland
+      unstable.waybar
+      pass-wayland
       # antidote
   #     tree
     ];

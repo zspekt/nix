@@ -8,9 +8,14 @@
 			url = "github:nix-community/home-manager/release-24.05";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+
+    dotfiles = {
+      flake = false;
+      url = "git+https://github.com/zspekt/dotfiles?submodules=1";
+    };
 	};
 
-	outputs = { nixpkgs, home-manager, ... }:
+	outputs = { nixpkgs, home-manager, dotfiles, ... }:
 	let 
 		system = "x86_64-linux"; #ARCH LINUX MENTIONED
 	in {
