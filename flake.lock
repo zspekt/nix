@@ -3,14 +3,17 @@
     "dotfiles": {
       "flake": false,
       "locked": {
-        "lastModified": 1,
-        "narHash": "sha256-pQpattmS9VmO3ZIQUFn66az8GSmB4IvYhTTCFn6SUmo=",
-        "path": "/nix/store/rykd5k4jayzd7k816m7wv85i20vwqf02-source/dotfiles",
-        "type": "path"
+        "lastModified": 1717756706,
+        "narHash": "sha256-iwQrhKBLce8qnCMz0mWcq2SPzJmOHgJ+bI2yRtaAe9g=",
+        "ref": "a23a89442447d9030196ce5a161be25cb09261eb",
+        "rev": "a23a89442447d9030196ce5a161be25cb09261eb",
+        "revCount": 93,
+        "type": "git",
+        "url": "file:./dotfiles"
       },
       "original": {
-        "path": "/nix/store/rykd5k4jayzd7k816m7wv85i20vwqf02-source/dotfiles",
-        "type": "path"
+        "type": "git",
+        "url": "file:./dotfiles"
       }
     },
     "home-manager": {
