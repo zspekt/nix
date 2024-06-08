@@ -4,16 +4,18 @@
       "flake": false,
       "locked": {
         "lastModified": 1717756706,
-        "narHash": "sha256-iwQrhKBLce8qnCMz0mWcq2SPzJmOHgJ+bI2yRtaAe9g=",
-        "ref": "a23a89442447d9030196ce5a161be25cb09261eb",
+        "narHash": "sha256-xFERN37dXeBYN/iW+3o9VK3+Rr5x84euAECGJrFJJFc=",
+        "ref": "refs/heads/desktoparch",
         "rev": "a23a89442447d9030196ce5a161be25cb09261eb",
         "revCount": 93,
+        "submodules": true,
         "type": "git",
-        "url": "file:./dotfiles"
+        "url": "https://github.com/zspekt/dotfiles"
       },
       "original": {
+        "submodules": true,
         "type": "git",
-        "url": "file:./dotfiles"
+        "url": "https://github.com/zspekt/dotfiles"
       }
     },
     "home-manager": {

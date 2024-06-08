@@ -11,23 +11,24 @@
 
     dotfiles = {
       flake = false;
-      # url = "git+https://github.com/zspekt/dotfiles?submodules=1";
-      url = "git+file:./dotfiles";
+      url = "git+https://github.com/zspekt/dotfiles?submodules=1";
     };
 	};
 
-	outputs = { nixpkgs, home-manager, dotfiles, ... }:
+	outputs = {nixpkgs, home-manager, ... }@inputs:
 	let 
-		system = "x86_64-linux"; #ARCH LINUX MENTIONED
+		system = "x86_64-linux";
 	in {
 	# nixosConfigurations.<hostnameDefinedOnConfiguration.nix>
 		nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
 			inherit system;
 			modules = [ ./configuration.nix ];
+      extraSpecialArgs = {inherit inputs;};
 		};
 		homeConfigurations.zspekt = home-manager.lib.homeManagerConfiguration {
 			pkgs = nixpkgs.legacyPackages.${system};
 			modules = [ ./home.nix ];
+      extraSpecialArgs = {inherit inputs;};
 		};
 	};
 }
