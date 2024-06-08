@@ -1,4 +1,4 @@
-{config, pkgs, home-manager, inputs, ... }: {
+{config, pkgs, home-manager, ... }: {
 	home = {
 
 	username = "zspekt";
@@ -19,7 +19,7 @@
 programs.gpg = {
     enable = true;
     publicKeys = [
-      { source = "${inputs.dotfiles}/key.pub"; trust = 5; }
+      { source = ./dotfiles/key.pub; trust = 5; }
     ];
   };
 
@@ -81,56 +81,56 @@ programs.gpg = {
   home.file = {
     neovim = {
          recursive = true;
-         source  = "${inputs.dotfiles}/.config/nvim";
+         source  = ./dotfiles/.config/nvim;
          target = "./.config/nvim";
        };
 
        zshPluginList = {
          recursive = false;
-         source  = "${inputs.dotfiles}/.zsh/zsh_plugins.txt";
+         source  = ./dotfiles/.zsh/zsh_plugins.txt;
          target = "./.zsh/zsh_plugins.txt";
        };
 
        zshrc = {
          recursive = false;
-         source  = "${inputs.dotfiles}/.zshrc";
+         source  = ./dotfiles/.zshrc;
          target = "./.zshrc";
        };
 
        p10k = {
          recursive = false;
-         source  = "${inputs.dotfiles}/.p10k.zsh";
+         source  = ./dotfiles/.p10k.zsh;
          target = "./.p10k.zsh";
        };
 
        hypr = {
          recursive = true;
-         source  = "${inputs.dotfiles}/.config/hypr";
+         source  = ./dotfiles/.config/hypr;
          target = ".config/hypr";
        };
 
       tmux = {
         recursive = false;
-        source  = "${inputs.dotfiles}/.config/tmux/tmux.conf";
+        source  = ./dotfiles/.config/tmux/tmux.conf;
         target = ".config/tmux/tmux.conf";
       };
 
        waybar = {
          recursive = true;
-         source  = "${inputs.dotfiles}/.config/waybar";
+         source  = ./dotfiles/.config/waybar;
          target = ".config/waybar";
        };
 
        kitty = {
          recursive = true;
-         source  = "${inputs.dotfiles}/.config/kitty";
+         source  = ./dotfiles/.config/kitty;
          target = ".config/kitty";
        };
 
 
        rofi = {
          recursive = true;
-         source  = "${inputs.dotfiles}/.config/rofi";
+         source  = ./dotfiles/.config/rofi;
          target = ".config/rofi";
 };
 };
