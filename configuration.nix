@@ -132,6 +132,7 @@ hardware.nvidia = {
       rofi-wayland
       waybar
       pass-wayland
+      gh
       # antidote
   #     tree
     ];
