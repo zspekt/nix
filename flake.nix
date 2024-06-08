@@ -23,7 +23,6 @@
 		nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
 			inherit system;
 			modules = [ ./configuration.nix ];
-      extraSpecialArgs = {inherit inputs;};
 		};
 		homeConfigurations.zspekt = home-manager.lib.homeManagerConfiguration {
 			pkgs = nixpkgs.legacyPackages.${system};
