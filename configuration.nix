@@ -200,8 +200,27 @@ environment.variables = {
      clang
      cl
      zig
+
+    # sound
+    wireplumber
+    pipewire
+    pamixer
+    pavucontrol
   ];
 
+
+    sound.enable = true;
+    security.rtkit.enable = true;
+
+    services.pipewire = {
+      systemWide = false;
+      audio.enable = true;
+      enable = true;
+      alsa.enable = true;
+      pulse.enable = true;
+      wireplumber.enable = true;
+      alsa.support32Bit = true;
+      };
 
   # simply adding 'nerdfonts' will install 5G worth of fonts
   # here we are specifying we only want firacode and jetbrainsmono
