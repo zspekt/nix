@@ -247,15 +247,18 @@ environment.variables = {
   btop
   htop
   cmatrix
-  rio
-  alacritty
-  foot
 
     # sound
     wireplumber
     pipewire
     pamixer
     pavucontrol
+
+# nix
+    nil
+    alejandra
+    nixfmt-rfc-style
+    statix
   ];
 
 
