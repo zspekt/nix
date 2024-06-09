@@ -140,6 +140,7 @@ hardware.nvidia = {
       grim
       slurp
       swappy
+      wev
       # antidote
   #     tree
     ];
