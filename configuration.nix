@@ -127,12 +127,19 @@ hardware.nvidia = {
       wl-clipboard
       pass
       discord-screenaudio
+      discord
+      xwaylandvideobridge
       tg
       telegram-desktop
       rofi-wayland
       waybar
       pass-wayland
       gh
+      playerctl
+
+      grim
+      slurp
+      swappy
       # antidote
   #     tree
     ];
@@ -197,9 +204,51 @@ environment.variables = {
 
      # vim>
      gcc
-     clang
-     cl
-     zig
+
+    # go
+    gopls
+
+    # python
+    black
+    # debugpy
+    mypy
+    ruff
+    pyright
+
+
+   # js
+    biome
+    pkgs.nodePackages.typescript-language-server
+
+    # js-debug-adapter
+
+   # shell
+   shfmt
+   shellcheck
+
+   # sql
+
+   # sqlls not available
+   # sqls possible alternative
+   sqlfluff
+
+  # css
+   # vscode-langservers-extracted # alternative?
+   # css-lsp not available
+   stylelint
+
+  # c
+   # clang-format not available
+
+# misc
+   nodePackages.prettier
+
+  btop
+  htop
+  cmatrix
+  rio
+  alacritty
+  foot
 
     # sound
     wireplumber
