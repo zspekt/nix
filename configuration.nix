@@ -128,6 +128,7 @@ hardware.nvidia = {
       pass
       discord-screenaudio
       discord
+      webcord
       xwaylandvideobridge
       tg
       telegram-desktop
