@@ -1,6 +1,43 @@
 local plugins = {
 
   {
+    "folke/trouble.nvim",
+    opts = {}, -- for default options, refer to the configuration section for custom setup.
+    cmd = "Trouble",
+    keys = {
+      {
+        "<leader>xx",
+        "<cmd>Trouble diagnostics toggle<cr>",
+        desc = "Diagnostics (Trouble)",
+      },
+      {
+        "<leader>xX",
+        "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+        desc = "Buffer Diagnostics (Trouble)",
+      },
+      {
+        "<leader>cs",
+        "<cmd>Trouble symbols toggle focus=false<cr>",
+        desc = "Symbols (Trouble)",
+      },
+      {
+        "<leader>cl",
+        "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+        desc = "LSP Definitions / references / ... (Trouble)",
+      },
+      {
+        "<leader>xL",
+        "<cmd>Trouble loclist toggle<cr>",
+        desc = "Location List (Trouble)",
+      },
+      {
+        "<leader>xQ",
+        "<cmd>Trouble qflist toggle<cr>",
+        desc = "Quickfix List (Trouble)",
+      },
+    },
+  },
+  {
     "andymass/vim-matchup",
     lazy = false,
     setup = function()
@@ -13,11 +50,11 @@ local plugins = {
     lazy = false,
     config = function()
       require("numb").setup {
-        show_numbers = true,         -- Enable 'number' for the window while peeking
-        show_cursorline = true,      -- Enable 'cursorline' for the window while peeking
+        show_numbers = true, -- Enable 'number' for the window while peeking
+        show_cursorline = true, -- Enable 'cursorline' for the window while peeking
         hide_relativenumbers = true, -- Enable turning off 'relativenumber' for the window while peeking
-        number_only = false,         -- Peek only when the command is only a number instead of when it starts with a number
-        centered_peeking = true,     -- Peeked line will be centered relative to window
+        number_only = false, -- Peek only when the command is only a number instead of when it starts with a number
+        centered_peeking = true, -- Peeked line will be centered relative to window
       }
     end,
   },
@@ -59,9 +96,9 @@ local plugins = {
     },
     config = true,
     keys = {
-      { "<leader>m",  "<cmd>lua require('harpoon.mark').add_file()<CR>",        desc = "Mark file with harpoon" },
-      { "<leader>hn", "<cmd>lua require('harpoon.ui').nav_next()<CR>",          desc = "Go to next harpoon mark" },
-      { "<leader>hp", "<cmd>lua require('harpoon.ui').nav_prev()<CR>",          desc = "Go to previous harpoon mark" },
+      { "<leader>m", "<cmd>lua require('harpoon.mark').add_file()<CR>", desc = "Mark file with harpoon" },
+      { "<leader>hn", "<cmd>lua require('harpoon.ui').nav_next()<CR>", desc = "Go to next harpoon mark" },
+      { "<leader>hp", "<cmd>lua require('harpoon.ui').nav_prev()<CR>", desc = "Go to previous harpoon mark" },
       { "<leader>fi", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", desc = "Show harpoon marks" },
     },
   },
