@@ -48,6 +48,11 @@ local opts = {
     null_ls.builtins.formatting.prettier.with {
       filetypes = { "html", "json", "yaml", "markdown", "css" },
     },
+
+    -- nix
+    null_ls.builtins.formatting.nixfmt,
+    null_ls.builtins.diagnostics.statix,
+    null_ls.builtins.code_actions.statix,
   },
 
   on_attach = function(client, bufnr)
