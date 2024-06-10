@@ -196,6 +196,7 @@ environment.variables = {
      antidote
      bat
 
+    stylua
     lua54Packages.luacheck
     lua-language-server
     luarocks
