@@ -2,32 +2,39 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
+  nixpkgs.config = {
+    allowUnfree = true;
+  };
 
-	nixpkgs.config = {
-	allowUnfree = true;
-};
+  # Enable OpenGL
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+  };
 
-	  # Enable OpenGL
-	  hardware.opengl = {
-	    enable = true;
-	    driSupport = true;
-	    driSupport32Bit = true;
-	  };
+  # Load nvidia driver for Xorg and Wayland
+  services.xserver.videoDrivers = [ "nvidia" ];
 
-# Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = ["nvidia"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-
-hardware.nvidia = {
+  hardware.nvidia = {
 
     # Modesetting is required.
     modesetting.enable = true;
@@ -52,7 +59,7 @@ hardware.nvidia = {
     open = false;
 
     # Enable the Nvidia settings menu,
-	# accessible via `nvidia-settings`.
+    # accessible via `nvidia-settings`.
     nvidiaSettings = true;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
@@ -63,16 +70,15 @@ hardware.nvidia = {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.initrd.luks.devices.luksroot = {
-     device = "/dev/disk/by-uuid/3d294f20-e898-4030-8456-f0aee7a16ae9";
-     preLVM = true;
-     allowDiscards = true;
+    device = "/dev/disk/by-uuid/3d294f20-e898-4030-8456-f0aee7a16ae9";
+    preLVM = true;
+    allowDiscards = true;
   };
-
 
   # networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
   # Set your time zone.
   # time.timeZone = "Europe/Amsterdam";
@@ -84,19 +90,17 @@ hardware.nvidia = {
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
   # console = {
-    # font = "Lat2-Terminus16";
-    # keyMap = "us";
-    # useXkbConfig = true; # use xkb.options in tty.
+  # font = "Lat2-Terminus16";
+  # keyMap = "us";
+  # useXkbConfig = true; # use xkb.options in tty.
   # };
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
 
-
   # Enable the Plasma 5 Desktop Environment.
   # services.xserver.displayManager.sddm.enable = true;
   # services.xserver.desktopManager.plasma5.enable = true;
-  
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -114,10 +118,14 @@ hardware.nvidia = {
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
 
-    users.users.zspekt = {
+  users.users.zspekt = {
     shell = pkgs.zsh;
     isNormalUser = true;
-    extraGroups = [ "wheel" "input" "networkmanager" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [
+      "wheel"
+      "input"
+      "networkmanager"
+    ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       firefox
       hyprland
@@ -143,33 +151,30 @@ hardware.nvidia = {
       swappy
       wev
       # antidote
-  #     tree
+      #     tree
     ];
   };
 
-    # Enable GPG at a system level 
+  # Enable GPG at a system level 
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
     enableExtraSocket = true;
   };
 
-
-
   users.users.zspekt.openssh.authorizedKeys.keys = [
-  "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCdjc5dulbNt/kFWD4gz2V0QKzITX8WK9XOZoRC1cAi57Lrl2Wmx5m92ZuRis2uT2cUe/aZ8dhXxUjBs8aeqWT4rZpmyO1osle/RLfas0MUdinGfr7mfrEn9Kt8NJHREuvx4Gm6Ry2iU0bl1SuGbwNRorQNBNmLLkBi2hNqZTLO6ZkJNIViRhOX6DQ6UEeEDtG5cVhdIh3VBODrGFm+Y6pk3WUfS8HxyZ6zdVNRKI6NxF0d4H/gRvV+2Rwf/BLooEIXGga5OW9k1gKgCNrLrcwRg7VOnwAbnSMihV7KLfOv+qQ6GH0hiTajpnc7uuBwlMZseqTAlcMGhAOOygf9DNPc4IW+QDqcqzdo+5DAdpOQNlKmq6M+gDzPvlaxBdO97CAdkZhKi4xUNb5I9goJK6LU6XLgQSCjfLpqEZ+w1rrQJkUfIRf+bYq/gTuTolJtHrvxtUrlLQBlFVQdycngbrhY05N/IJlUOBuOd4yt5EO5MEeYBLhXhNUnI0+7gMhuHa875shK9QhTeCARiCCHjHMsUCr7wFBQQ74/Kz1z7+TArRoEvL7f6dgPNHXQ6bSo+E7mtrLOWBq5Jkw7F6TsuLeNGPule/Gjx5qH+cKWFn7dt4H8xvujaQHyrZvwRzxAp1kvQyuKdM6H1RWMUCOLZVrODZowEYQQW2HHLIss1hr8sQ== cardno:14 977 425"
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCdjc5dulbNt/kFWD4gz2V0QKzITX8WK9XOZoRC1cAi57Lrl2Wmx5m92ZuRis2uT2cUe/aZ8dhXxUjBs8aeqWT4rZpmyO1osle/RLfas0MUdinGfr7mfrEn9Kt8NJHREuvx4Gm6Ry2iU0bl1SuGbwNRorQNBNmLLkBi2hNqZTLO6ZkJNIViRhOX6DQ6UEeEDtG5cVhdIh3VBODrGFm+Y6pk3WUfS8HxyZ6zdVNRKI6NxF0d4H/gRvV+2Rwf/BLooEIXGga5OW9k1gKgCNrLrcwRg7VOnwAbnSMihV7KLfOv+qQ6GH0hiTajpnc7uuBwlMZseqTAlcMGhAOOygf9DNPc4IW+QDqcqzdo+5DAdpOQNlKmq6M+gDzPvlaxBdO97CAdkZhKi4xUNb5I9goJK6LU6XLgQSCjfLpqEZ+w1rrQJkUfIRf+bYq/gTuTolJtHrvxtUrlLQBlFVQdycngbrhY05N/IJlUOBuOd4yt5EO5MEeYBLhXhNUnI0+7gMhuHa875shK9QhTeCARiCCHjHMsUCr7wFBQQ74/Kz1z7+TArRoEvL7f6dgPNHXQ6bSo+E7mtrLOWBq5Jkw7F6TsuLeNGPule/Gjx5qH+cKWFn7dt4H8xvujaQHyrZvwRzxAp1kvQyuKdM6H1RWMUCOLZVrODZowEYQQW2HHLIss1hr8sQ== cardno:14 977 425"
   ];
 
-programs.ssh.startAgent = false; # GPG act as ssh-agent
+  programs.ssh.startAgent = false; # GPG act as ssh-agent
 
-environment.variables = {
+  environment.variables = {
     GPG_TTY = "${pkgs.coreutils}/bin/tty";
     SSH_AUTH_SOCK = "/run/user/1000/gnupg/S.gpg-agent.ssh";
   };
 
   # Enable GPG Smartcards (Like Yubikeys)
   hardware.gpgSmartcards.enable = true;
-
 
   users.defaultUserShell = pkgs.zsh;
 
@@ -183,18 +188,20 @@ environment.variables = {
   # $ nix search wget
   environment.systemPackages = with pkgs; [
 
-     home-manager
-     neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-     wget
-     curl
-     vim
-     git
-     tmux
-     neofetch
-     fzf
-     coreutils
-     antidote
-     bat
+    steam
+
+    home-manager
+    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    wget
+    curl
+    vim
+    git
+    tmux
+    neofetch
+    fzf
+    coreutils
+    antidote
+    bat
 
     stylua
     lua54Packages.luacheck
@@ -204,10 +211,10 @@ environment.variables = {
     go
     python3
 
-     pinentry-qt
+    pinentry-qt
 
-     # vim>
-     gcc
+    # vim>
+    gcc
 
     # go
     gopls
@@ -222,37 +229,36 @@ environment.variables = {
     ruff
     pyright
 
-
-   # js
+    # js
     biome
     pkgs.nodePackages.typescript-language-server
 
     # js-debug-adapter
 
-   # shell
-   shfmt
-   shellcheck
+    # shell
+    shfmt
+    shellcheck
 
-   # sql
+    # sql
 
-   # sqlls not available
-   # sqls possible alternative
-   sqlfluff
+    # sqlls not available
+    # sqls possible alternative
+    sqlfluff
 
-  # css
-   # vscode-langservers-extracted # alternative?
-   # css-lsp not available
-   stylelint
+    # css
+    # vscode-langservers-extracted # alternative?
+    # css-lsp not available
+    stylelint
 
-  # c
-   # clang-format not available
+    # c
+    # clang-format not available
 
-# misc
-   nodePackages.prettier
+    # misc
+    nodePackages.prettier
 
-  btop
-  htop
-  cmatrix
+    btop
+    htop
+    cmatrix
 
     # sound
     wireplumber
@@ -260,33 +266,36 @@ environment.variables = {
     pamixer
     pavucontrol
 
-# nix
+    # nix
     nil
     alejandra
     nixfmt-rfc-style
     statix
   ];
 
+  sound.enable = true;
+  security.rtkit.enable = true;
 
-    sound.enable = true;
-    security.rtkit.enable = true;
-
-    services.pipewire = {
-      systemWide = false;
-      audio.enable = true;
-      enable = true;
-      alsa.enable = true;
-      pulse.enable = true;
-      wireplumber.enable = true;
-      alsa.support32Bit = true;
-      };
+  services.pipewire = {
+    systemWide = false;
+    audio.enable = true;
+    enable = true;
+    alsa.enable = true;
+    pulse.enable = true;
+    wireplumber.enable = true;
+    alsa.support32Bit = true;
+  };
 
   # simply adding 'nerdfonts' will install 5G worth of fonts
   # here we are specifying we only want firacode and jetbrainsmono
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+    (nerdfonts.override {
+      fonts = [
+        "FiraCode"
+        "JetBrainsMono"
+      ];
+    })
   ];
-
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
@@ -318,7 +327,4 @@ environment.variables = {
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "23.11"; # Did you read the comment?
-
 }
-
-
