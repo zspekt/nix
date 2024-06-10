@@ -1,5 +1,12 @@
 local M = {}
 
+M.disabled = {
+  n = {
+    ["<leader>vt"] = "",
+    ["<leader>ht"] = "",
+  },
+}
+
 M.general = {
   n = {
     ["<C-h>"] = { "<cmd> TmuxNavigateLeft<CR>", "window left" },
@@ -10,6 +17,19 @@ M.general = {
     ["<leader>tw"] = { "<cmd> set wrap <CR>", "Line wrapping on" },
     ["<leader>tn"] = { "<cmd> set nowrap <CR>", "Line wrapping off" },
     ["<leader>sfc"] = { "<cmd> set filetype=yaml.docker-compose <CR>", "Set filetype to docker-compose" },
+
+    ["<leader>hth"] = {
+      function()
+        require("nvterm.terminal").toggle "horizontal"
+      end,
+      "Toggle horizontal term",
+    },
+    ["<leader>htv"] = {
+      function()
+        require("nvterm.terminal").toggle "vertical"
+      end,
+      "Toggle vertical term",
+    },
   },
 }
 

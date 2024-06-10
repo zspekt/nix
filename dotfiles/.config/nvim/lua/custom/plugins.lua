@@ -6,12 +6,12 @@ local plugins = {
     cmd = "Trouble",
     keys = {
       {
-        "<leader>qx",
+        "<leader>vx",
         "<cmd>Trouble diagnostics toggle<cr>",
         desc = "Diagnostics (Trouble)",
       },
       {
-        "<leader>qX",
+        "<leader>vX",
         "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
         desc = "Buffer Diagnostics (Trouble)",
       },
@@ -26,12 +26,12 @@ local plugins = {
         desc = "LSP Definitions / references / ... (Trouble)",
       },
       {
-        "<leader>qL",
+        "<leader>vL",
         "<cmd>Trouble loclist toggle<cr>",
         desc = "Location List (Trouble)",
       },
       {
-        "<leader>qQ",
+        "<leader>vQ",
         "<cmd>Trouble qflist toggle<cr>",
         desc = "Quickfix List (Trouble)",
       },
