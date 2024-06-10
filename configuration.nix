@@ -196,7 +196,8 @@ environment.variables = {
      antidote
      bat
 
-
+    lua54Packages.luacheck
+    lua-language-server
     luarocks
     unzip
     go
@@ -209,6 +210,9 @@ environment.variables = {
 
     # go
     gopls
+    gofumpt
+    goimports-reviser
+    golines
 
     # python
     black
