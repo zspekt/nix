@@ -198,6 +198,9 @@
     antidote
     bat
 
+    zathura
+    hyprpaper
+
     stylua
     lua54Packages.luacheck
     lua-language-server
