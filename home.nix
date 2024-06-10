@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  home-manager,
-  ...
-}:
+{ pkgs, ... }:
 {
   home = {
 
