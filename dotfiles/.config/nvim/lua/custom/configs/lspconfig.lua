@@ -111,3 +111,5 @@ lspconfig.ccls.setup {
     },
   },
 }
+
+lspconfig.nil_ls.setup {}
