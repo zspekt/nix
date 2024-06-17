@@ -34,6 +34,9 @@
     slurp
     swappy
 
+    # theming
+    glib
+
     # misc
     wev
     wl-clipboard

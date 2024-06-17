@@ -12,5 +12,6 @@
     ./modules/home-manager/git.nix
     ./modules/home-manager/gpg.nix
     ./modules/home-manager/dotlinks.nix
+    ./modules/home-manager/gtk.nix
   ];
 }
