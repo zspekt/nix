@@ -1,3 +1,6 @@
+let
+  host = builtins.getEnv "HOST";
+in
 {
 
   # source defines the path within the nix store
@@ -53,10 +56,23 @@
       target = ".config/kitty";
     };
 
-    rofi = {
-      recursive = true;
-      source = ../../dotfiles/.config/rofi;
-      target = ".config/rofi";
-    };
+    rofi =
+      if "${host}" == "nixos" then
+        {
+          recursive = true;
+          source = ../../dotfiles/.config/rofi;
+          target = ".config/BOOBA";
+        }
+      else
+        {
+          recursive = true;
+          source = ../../dotfiles/.config/rofi;
+          target = ".config/rofi";
+        };
+    # rofi = {
+    #   recursive = true;
+    #   source = ../../dotfiles/.config/rofi;
+    #   target = ".config/rofi";
+    # };
   };
 }

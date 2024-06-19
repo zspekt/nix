@@ -8,16 +8,17 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./modules/nix/machines/nixos/nvidia.nix
+    ./modules/nix/machines/nixos/hostname.nix
 
-    ./modules/nixos/gpg.nix
-    ./modules/nixos/gui.nix
-    ./modules/nixos/langsLspEtAl.nix
-    ./modules/nixos/networking.nix
-    ./modules/nixos/nvidia.nix
-    ./modules/nixos/openssh.nix
-    ./modules/nixos/shell.nix
-    ./modules/nixos/sound.nix
-    ./modules/nixos/user.nix
+    ./modules/nix/common/gpg.nix
+    ./modules/nix/common/gui.nix
+    ./modules/nix/common/langsLspEtAl.nix
+    ./modules/nix/common/networking.nix
+    ./modules/nix/common/openssh.nix
+    ./modules/nix/common/shell.nix
+    ./modules/nix/common/sound.nix
+    ./modules/nix/common/user.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
