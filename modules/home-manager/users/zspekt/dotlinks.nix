@@ -10,49 +10,49 @@ in
   home.file = {
     neovim = {
       recursive = true;
-      source = ../../dotfiles/.config/nvim;
+      source = ../../../../dotfiles/.config/nvim;
       target = "./.config/nvim";
     };
 
     zshPluginList = {
       recursive = false;
-      source = ../../dotfiles/.zsh/zsh_plugins.txt;
+      source = ../../../../dotfiles/.zsh/zsh_plugins.txt;
       target = "./.zsh/zsh_plugins.txt";
     };
 
     zshrc = {
       recursive = false;
-      source = ../../dotfiles/.zshrc;
+      source = ../../../../dotfiles/.zshrc;
       target = "./.zshrc";
     };
 
     p10k = {
       recursive = false;
-      source = ../../dotfiles/.p10k.zsh;
+      source = ../../../../dotfiles/.p10k.zsh;
       target = "./.p10k.zsh";
     };
 
     hypr = {
       recursive = true;
-      source = ../../dotfiles/.config/hypr;
+      source = ../../../../dotfiles/.config/hypr;
       target = ".config/hypr";
     };
 
     tmux = {
       recursive = false;
-      source = ../../dotfiles/.config/tmux/tmux.conf;
+      source = ../../../../dotfiles/.config/tmux/tmux.conf;
       target = ".config/tmux/tmux.conf";
     };
 
     waybar = {
       recursive = true;
-      source = ../../dotfiles/.config/waybar;
+      source = ../../../../dotfiles/.config/waybar;
       target = ".config/waybar";
     };
 
     kitty = {
       recursive = true;
-      source = ../../dotfiles/.config/kitty;
+      source = ../../../../dotfiles/.config/kitty;
       target = ".config/kitty";
     };
 
@@ -60,18 +60,18 @@ in
       if "${host}" == "nixos" then
         {
           recursive = true;
-          source = ../../dotfiles/.config/rofi;
+          source = ../../../../dotfiles/.config/rofi;
           target = ".config/BOOBA";
         }
       else
         {
           recursive = true;
-          source = ../../dotfiles/.config/rofi;
+          source = ../../../../dotfiles/.config/rofi;
           target = ".config/rofi";
         };
     # rofi = {
     #   recursive = true;
-    #   source = ../../dotfiles/.config/rofi;
+    #   source = ../../../../dotfiles/.config/rofi;
     #   target = ".config/rofi";
     # };
   };

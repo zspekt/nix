@@ -8,31 +8,18 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./modules/nix/machines/nixos/nvidia.nix
-    ./modules/nix/machines/nixos/hostname.nix
+    ./nvidia.nix
+    ./hostname.nix
 
-    ./modules/nix/common/gpg.nix
-    ./modules/nix/common/gui.nix
-    ./modules/nix/common/langsLspEtAl.nix
-    ./modules/nix/common/networking.nix
-    ./modules/nix/common/openssh.nix
-    ./modules/nix/common/shell.nix
-    ./modules/nix/common/sound.nix
-    ./modules/nix/common/user.nix
+    ../../common/gpg.nix
+    ../../common/gui.nix
+    ../../common/langsLspEtAl.nix
+    ../../common/networking.nix
+    ../../common/openssh.nix
+    ../../common/shell.nix
+    ../../common/sound.nix
+    ../../common/user.nix
   ];
-
-  # Use the systemd-boot EFI boot loader.
-  boot = {
-    loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
-    };
-    initrd.luks.devices.luksroot = {
-      device = "/dev/disk/by-uuid/3d294f20-e898-4030-8456-f0aee7a16ae9";
-      preLVM = true;
-      allowDiscards = true;
-    };
-  };
 
   # Set your time zone.
   time.timeZone = "America/Buenos_Aires";

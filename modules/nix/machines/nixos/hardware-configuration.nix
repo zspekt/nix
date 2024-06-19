@@ -11,6 +11,19 @@
 {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
+  # Use the systemd-boot EFI boot loader.
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+    initrd.luks.devices.luksroot = {
+      device = "/dev/disk/by-uuid/3d294f20-e898-4030-8456-f0aee7a16ae9";
+      preLVM = true;
+      allowDiscards = true;
+    };
+  };
+
   boot.initrd.availableKernelModules = [
     "nvme"
     "xhci_pci"

@@ -8,7 +8,7 @@
         # source defines the path within the nix store
         # with the current file as a starting point
         # hence why we need to go up 2 dirs
-        source = ../../dotfiles/key.pub;
+        source = ../../../../dotfiles/key.pub;
         trust = 5;
       }
     ];

@@ -19,11 +19,11 @@
       # nixosConfigurations.<hostnameDefinedOnConfiguration.nix>
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         inherit system;
-        modules = [ ./configuration.nix ];
+        modules = [ ./modules/nix/machines/nixos/configuration.nix ];
       };
       homeConfigurations.zspekt = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${system};
-        modules = [ ./home.nix ];
+        modules = [ ./modules/home-manager/users/zspekt/home.nix ];
       };
     };
 }
