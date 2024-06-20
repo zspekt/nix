@@ -16,14 +16,39 @@
       system = "x86_64-linux";
     in
     {
-      # nixosConfigurations.<hostnameDefinedOnConfiguration.nix>
+      ####### desktop ##########################################################
+      # nixosConfigurations.<hostname>
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [ ./modules/nix/machines/nixos/configuration.nix ];
+        specialArgs = {
+          hostname = "nixos";
+        };
       };
-      homeConfigurations.zspekt = home-manager.lib.homeManagerConfiguration {
+
+      homeConfigurations."zspekt@nixos" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${system};
         modules = [ ./modules/home-manager/users/zspekt/home.nix ];
+        extraSpecialArgs = {
+          hostname = "nixos";
+        };
+      };
+
+      ####### thinkpad #########################################################
+      nixosConfigurations.nixth = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [ ./modules/nix/machines/nixth/configuration.nix ];
+        specialArgs = {
+          hostname = "nixth";
+        };
+      };
+
+      homeConfigurations."zspekt@nixth" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.${system};
+        modules = [ ./modules/home-manager/users/zspekt/home.nix ];
+        extraSpecialArgs = {
+          hostname = "nixth";
+        };
       };
     };
 }

@@ -1,3 +1,4 @@
+{ hostname, ... }:
 let
   host = builtins.getEnv "HOST";
 in
@@ -56,23 +57,10 @@ in
       target = ".config/kitty";
     };
 
-    rofi =
-      if "${host}" == "nixos" then
-        {
-          recursive = true;
-          source = ../../../../dotfiles/.config/rofi;
-          target = ".config/BOOBA";
-        }
-      else
-        {
-          recursive = true;
-          source = ../../../../dotfiles/.config/rofi;
-          target = ".config/rofi";
-        };
-    # rofi = {
-    #   recursive = true;
-    #   source = ../../../../dotfiles/.config/rofi;
-    #   target = ".config/rofi";
-    # };
+    rofi = {
+      recursive = true;
+      source = ../../../../dotfiles/.config/rofi;
+      target = ".config/rofi";
+    };
   };
 }
