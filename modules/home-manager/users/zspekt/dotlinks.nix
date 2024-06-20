@@ -1,8 +1,15 @@
 { hostname, ... }:
-let
-  host = builtins.getEnv "HOST";
-in
 {
+
+  imports =
+
+    if "${hostname}" == "nixos" then
+      [ ./dotlinks/hyprDesktop.nix ]
+
+    else if "${hostname}" == "nixth" then
+      [ ./dotlinks/hyprThpad.nix ]
+    else
+      throw "unknown host";
 
   # source defines the path within the nix store
   # from the perspective of the file.
@@ -31,12 +38,6 @@ in
       recursive = false;
       source = ../../../../dotfiles/.p10k.zsh;
       target = "./.p10k.zsh";
-    };
-
-    hypr = {
-      recursive = true;
-      source = ../../../../dotfiles/.config/hypr;
-      target = ".config/hypr";
     };
 
     tmux = {
