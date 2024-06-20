@@ -1,20 +1,17 @@
 { ... }:
 {
-  hyprConf = {
-    recursive = false;
-    source = ../../../../../dotfiles/.config/hypr/hyprlandThpad.conf;
-    target = ".config/hypr/hyprland.conf";
-  };
-  # if "${hostname}" == "nixos" then
-  #   {
-  #
-  #   }
-  # else
-  #   { };
+  home.file = {
 
-  hyprConfigs = {
-    recursive = true;
-    source = ../../../../../dotfiles/.config/hypr/configs;
-    target = ".config/hypr/configs";
+    hyprConf = {
+      recursive = false;
+      source = ../../../../../dotfiles/.config/hypr/hyprlandThpad.conf;
+      target = "./.config/hypr/hyprland.conf";
+    };
+
+    hyprConfigs = {
+      recursive = true;
+      source = ../../../../../dotfiles/.config/hypr/configs;
+      target = "./.config/hypr/configs";
+    };
   };
 }
