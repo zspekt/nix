@@ -4,10 +4,16 @@
   imports =
 
     if "${hostname}" == "nixos" then
-      [ ./dotlinks/hyprDesktop.nix ]
+      [
+        ./dotlinks/hyprDesktop.nix
+        ./dotlinks/waybarDesktop.nix
+      ]
 
     else if "${hostname}" == "nixth" then
-      [ ./dotlinks/hyprThpad.nix ]
+      [
+        ./dotlinks/hyprThpad.nix
+        ./dotlinks/waybarThpad.nix
+      ]
     else
       throw "unknown host";
 
@@ -44,12 +50,6 @@
       recursive = false;
       source = ../../../../dotfiles/.config/tmux/tmux.conf;
       target = ".config/tmux/tmux.conf";
-    };
-
-    waybar = {
-      recursive = true;
-      source = ../../../../dotfiles/.config/waybar;
-      target = ".config/waybar";
     };
 
     kitty = {
