@@ -28,6 +28,11 @@
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
   environment.systemPackages = with pkgs; [ home-manager ];
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
