@@ -5,8 +5,20 @@
   programs.ssh = {
     startAgent = false;
     extraConfig = ''
-      Host 192.168.*
+      Host 192.168.1.128
+        # raspi
         ForwardAgent yes
+        RemoteForward /run/user/1000/gnupg/S.gpg-agent /run/user/1000/gnupg/S.gpg-agent.extra
+
+      Host 192.168.1.244
+        # thinkpad
+        ForwardAgent yes
+        RemoteForward /run/user/1000/gnupg/S.gpg-agent /run/user/1000/gnupg/S.gpg-agent.extra
+
+      Host 192.168.1.162
+        # desktop
+        ForwardAgent yes
+        RemoteForward /run/user/1000/gnupg/S.gpg-agent /run/user/1000/gnupg/S.gpg-agent.extra
     '';
   };
 
