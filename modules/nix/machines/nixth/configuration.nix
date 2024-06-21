@@ -31,6 +31,10 @@
     "flakes"
   ];
 
+  nixpkgs.config = {
+    allowUnfree = true;
+  };
+
   environment.systemPackages = with pkgs; [ home-manager ];
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
