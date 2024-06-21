@@ -28,6 +28,7 @@
       PasswordAuthentication = false;
       PermitRootLogin = "no";
     };
+    extraConfig = ''StreamLocalBindUnlink yes'';
   };
 
   users.users.zspekt.openssh.authorizedKeys.keys = [
