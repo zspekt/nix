@@ -13,5 +13,11 @@
       source = ../../../../../dotfiles/.config/hypr/configs;
       target = "./.config/hypr/configs";
     };
+
+    hyprPaper = {
+      recursive = false;
+      source = ../../../../../dotfiles/.config/hypr/hyprpaperThpad.conf;
+      target = "./.config/hypr/hyprpaper.conf";
+    };
   };
 }
