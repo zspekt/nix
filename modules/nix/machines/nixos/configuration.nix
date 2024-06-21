@@ -9,7 +9,6 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./nvidia.nix
-    ./hostname.nix
 
     ../../common/gpg.nix
     ../../common/gui.nix
