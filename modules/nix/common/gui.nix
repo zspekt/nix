@@ -37,6 +37,9 @@
     # theming
     glib
 
+    # player
+    mpv
+
     # misc
     wev
     wl-clipboard
