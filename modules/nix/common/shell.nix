@@ -4,7 +4,10 @@
   programs = {
     zsh.enable = true;
     nano.enable = false;
-    neovim.defaultEditor = true;
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+    };
   };
 
   users.users.zspekt = {
