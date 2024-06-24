@@ -3,6 +3,7 @@
 
   programs = {
     zsh.enable = true;
+    command-not-found.enable = false;
     nano.enable = false;
     neovim = {
       enable = true;
