@@ -112,7 +112,7 @@ alias int="ping -c 3 ping.archlinux.org"
 ################################################################################
 
 # antidote
-source ~/.zsh/zsh_plugins.sh
+source ~/.zsh/zsh_plugins.zsh
 
 bindkey -v
 export KEYTIMEOUT=1
