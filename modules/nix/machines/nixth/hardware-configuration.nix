@@ -15,7 +15,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.initrd.luks.devices.luksroot = {
-    device = "/dev/disk/by-uuid/68655f01-94d0-41c4-829c-5a99ff2b3eac";
+    device = "/dev/disk/by-uuid/d32ab099-83e9-4088-8732-2ce2537c7d89";
     preLVM = true;
     allowDiscards = true;
   };
@@ -31,17 +31,17 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/1ce96324-9461-416c-96e8-11e63d1f22b9";
+    device = "/dev/disk/by-uuid/8f524fe7-3959-4dc0-98e4-e665b1d67a01";
     fsType = "ext4";
   };
 
   fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/76e514f8-d308-437c-a7e0-283456669811";
+    device = "/dev/disk/by-uuid/fa36112a-5677-4148-a7a9-1bb0034bb285";
     fsType = "ext4";
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/937B-81BC";
+    device = "/dev/disk/by-uuid/E1B1-D591";
     fsType = "vfat";
     options = [
       "fmask=0022"
