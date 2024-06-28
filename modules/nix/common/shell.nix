@@ -24,8 +24,7 @@
     vim
 
     # cli utilities
-    fzf
-    ripgrep
+    tldr
     zoxide
     gh
     git
@@ -36,9 +35,17 @@
     coreutils
     antidote
     bat
+    unzip
+
+    # finding stuff
+    fzf
+    ripgrep
+    fd
+
+    # monitoring
     btop
     htop
-    unzip
+
     # bloat
     neofetch
     cmatrix
