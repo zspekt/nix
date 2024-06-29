@@ -18,6 +18,8 @@
     # lua
     stylua
     lua54Packages.luacheck
+    lua51Packages.lua
+    lua53Packages.lua
     lua-language-server
     luarocks
 
@@ -37,6 +39,7 @@
     # shell
     shfmt
     shellcheck
+    beautysh
 
     # sql
     sqlfluff
