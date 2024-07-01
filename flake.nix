@@ -51,6 +51,10 @@
         modules = [ ./modules/nix/machines/nixth/configuration.nix ];
         specialArgs = {
           hostname = "nixth";
+          unstable = import unstable {
+            inherit system;
+            config.allowUnfree = true;
+          };
         };
       };
 
