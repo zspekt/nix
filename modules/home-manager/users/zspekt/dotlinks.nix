@@ -22,14 +22,12 @@
   # whereas target defines the path within home where we want the links
 
   home.file = {
-    # commented out while rewriting my neovim conf
-    # so i can store it in .config/nvim instead of doing immutable symlinks
 
-    # neovim = {
-    #   recursive = true;
-    #   source = ../../../../dotfiles/.config/nvim;
-    #   target = "./.config/nvim";
-    # };
+    neovim = {
+      recursive = true;
+      source = ../../../../dotfiles/.config/nvim;
+      target = "./.config/nvim";
+    };
 
     zshPluginList = {
       recursive = false;
