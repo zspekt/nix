@@ -20,6 +20,7 @@
   # source defines the path within the nix store
   # from the perspective of the file.
   # whereas target defines the path within home where we want the links
+  # when linking a dir, the whole dir will be read-only — not just its contents
 
   home.file = {
 
@@ -51,6 +52,12 @@
       recursive = false;
       source = ../../../../dotfiles/.config/tmux/tmux.conf;
       target = ".config/tmux/tmux.conf";
+    };
+
+    tmuxTpm = {
+      recursive = true;
+      source = ../../../../dotfiles/.tmux;
+      target = ".tmux";
     };
 
     kitty = {
