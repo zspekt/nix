@@ -30,7 +30,10 @@
         modules = [ ./modules/nix/machines/nixos/configuration.nix ];
         specialArgs = {
           hostname = "nixos";
-          unstable = import unstable { inherit system; };
+          unstable = import unstable {
+            inherit system;
+            config.allowUnfree = true;
+          };
         };
       };
 

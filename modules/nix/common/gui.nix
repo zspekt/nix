@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, unstable, ... }:
 
 {
   programs.hyprland.enable = true;
@@ -21,7 +21,7 @@
 
     # msging apps
     discord-screenaudio
-    discord
+    unstable.discord
     webcord
     tg
     telegram-desktop
@@ -37,8 +37,9 @@
     # theming
     glib
 
-    # player
+    # players
     mpv
+    vlc
 
     # misc
     wev
