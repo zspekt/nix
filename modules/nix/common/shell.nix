@@ -24,6 +24,7 @@
     vim
 
     # cli utilities
+    calc
     tldr
     zoxide
     gh
