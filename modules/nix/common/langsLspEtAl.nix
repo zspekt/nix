@@ -23,6 +23,10 @@
     lua-language-server
     luarocks
 
+    # rust
+    cargo
+    rustc
+
     # python
     python3
     black
