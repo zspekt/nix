@@ -9,6 +9,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
 
+    ../../common/containers.nix
     ../../common/gpg.nix
     ../../common/gui.nix
     ../../common/langsLspEtAl.nix
