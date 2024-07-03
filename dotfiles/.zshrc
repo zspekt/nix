@@ -36,8 +36,6 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # SSH and GPG ##################################################################
 ################################################################################
 
-export GPG_TTY="$(tty)"
-
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
     export EDITOR='vim'
