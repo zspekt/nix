@@ -40,12 +40,12 @@ export GPG_TTY="$(tty)"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-	export EDITOR='vim'
-	gpgconf --create-socketdir
+    export EDITOR='vim'
+    gpgconf --create-socketdir
 else
-	export GPG_TTY="$(tty)"
-  export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-  gpgconf --launch gpg-agent
+    export GPG_TTY="$(tty)"
+    export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+    gpgconf --launch gpg-agent
 fi
 
 
