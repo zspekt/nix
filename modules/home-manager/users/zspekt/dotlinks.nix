@@ -56,8 +56,8 @@
 
     tmuxTpm = {
       recursive = true;
-      source = ../../../../dotfiles/.tmux;
-      target = ".tmux";
+      source = ../../../../dotfiles/.tmux/plugins/tpm;
+      target = ".tmux/plugins/tpm";
     };
 
     kitty = {
