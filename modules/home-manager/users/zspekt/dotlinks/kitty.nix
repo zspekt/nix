@@ -3,7 +3,7 @@
   home.file = {
     kitty = {
       recursive = true;
-      source = ../../../../dotfiles/.config/kitty;
+      source = ../../../../../dotfiles/.config/kitty;
       target = ".config/kitty";
     };
   };
