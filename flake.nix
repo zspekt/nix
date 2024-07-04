@@ -68,19 +68,19 @@
 
       ####### raspi ############################################################
       nixosConfigurations.nixpi = nixpkgs.lib.nixosSystem {
-        inherit system;
+        system = "aarch64-linux";
         modules = [ ./modules/nix/machines/nixpi/configuration.nix ];
         specialArgs = {
           hostname = "nixpi";
           unstable = import unstable {
-            inherit system;
+            system = "aarch64-linux";
             config.allowUnfree = true;
           };
         };
       };
 
       homeConfigurations."zspekt@nixpi" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${system};
+        pkgs = nixpkgs.legacyPackages.${"aarch64-linux"};
         modules = [ ./modules/home-manager/users/zspekt/home.nix ];
         extraSpecialArgs = {
           hostname = "nixpi";
