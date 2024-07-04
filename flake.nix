@@ -65,5 +65,26 @@
           hostname = "nixth";
         };
       };
+
+      ####### raspi ############################################################
+      nixosConfigurations.nixpi = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [ ./modules/nix/machines/nixpi/configuration.nix ];
+        specialArgs = {
+          hostname = "nixpi";
+          unstable = import unstable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        };
+      };
+
+      homeConfigurations."zspekt@nixpi" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.${system};
+        modules = [ ./modules/home-manager/users/zspekt/home.nix ];
+        extraSpecialArgs = {
+          hostname = "nixpi";
+        };
+      };
     };
 }
