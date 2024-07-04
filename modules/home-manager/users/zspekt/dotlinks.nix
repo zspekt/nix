@@ -7,13 +7,19 @@
       [
         ./dotlinks/hyprDesktop.nix
         ./dotlinks/waybarDesktop.nix
+        ./dotlinks/kitty.nix
+        ./dotlinks/rofi.nix
       ]
 
     else if "${hostname}" == "nixth" then
       [
         ./dotlinks/hyprThpad.nix
         ./dotlinks/waybarThpad.nix
+        ./dotlinks/kitty.nix
+        ./dotlinks/rofi.nix
       ]
+    else if "${hostname}" == "nixpi" then
+      [ ]
     else
       throw "unknown host";
 
@@ -58,18 +64,6 @@
       recursive = true;
       source = ../../../../dotfiles/.tmux/plugins/tpm;
       target = ".tmux/plugins/tpm";
-    };
-
-    kitty = {
-      recursive = true;
-      source = ../../../../dotfiles/.config/kitty;
-      target = ".config/kitty";
-    };
-
-    rofi = {
-      recursive = true;
-      source = ../../../../dotfiles/.config/rofi;
-      target = ".config/rofi";
     };
   };
 }
