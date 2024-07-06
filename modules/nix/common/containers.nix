@@ -11,9 +11,9 @@
       };
 
       # Create a `docker` alias for podman, to use it as a drop-in replacement
+      # dockerCompat = true;
 
       # podman.extraPackages = [ pkgs.zfs ];
-      dockerCompat = true;
 
       # Required for containers under podman-compose to be able to talk to each other.
       defaultNetwork.settings.dns_enabled = true;
@@ -28,11 +28,13 @@
       #   storage.options.zfs.fsname = "zroot/podman";
       # };
       containersConf.settings = {
-        containers.dns_servers = [ "8.8.8.8" "8.8.4.4" ];
+        containers.dns_servers = [
+          "8.8.8.8"
+          "8.8.4.4"
+        ];
       };
     };
   };
-
 
   # Useful otherdevelopment tools
   environment.systemPackages = with pkgs; [

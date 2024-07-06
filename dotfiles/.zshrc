@@ -74,6 +74,9 @@ setopt HIST_FIND_NO_DUPS
 
 # alias cat=bat
 
+alias pd=podman
+alias pc=podman-compose
+
 alias kc=kubectl
 
 alias fdot="find . | fzf"
