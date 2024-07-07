@@ -55,3 +55,6 @@ vim.o.completeopt = "menuone,noselect"
 -- Set terminal gui colors to true
 vim.o.termguicolors = true
 
+vim.o.grepprg = 'rg --vimgrep --smart-case'
+
+vim.cmd('packadd! cfilter')
