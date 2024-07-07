@@ -3,6 +3,8 @@
 {
   programs.hyprland.enable = true;
 
+  security.pam.services.swaylock = { };
+
   environment.systemPackages = with pkgs; [
 
     # wm
@@ -12,6 +14,7 @@
     rofi-wayland
     waybar
     hyprpaper
+    swaylock
 
     # term
     kitty
