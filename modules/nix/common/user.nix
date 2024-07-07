@@ -6,6 +6,7 @@
       "wheel" # Enable ‘sudo’ for the user.
       "input"
       "networkmanager"
+      "video"
     ];
   };
 }

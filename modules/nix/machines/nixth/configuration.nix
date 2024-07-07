@@ -36,6 +36,12 @@
     allowUnfree = true;
   };
 
+  programs.light.enable = true;
+  programs.light.brightnessKeys = {
+    enable = true;
+    step = 5;
+  };
+
   environment.systemPackages = with pkgs; [ home-manager ];
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
