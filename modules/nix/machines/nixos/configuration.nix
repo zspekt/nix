@@ -10,7 +10,7 @@
     ./hardware-configuration.nix
     ./nvidia.nix
 
-    ../../common/containers.nix
+    ../../common/docker.nix
     ../../common/gpg.nix
     ../../common/gui.nix
     ../../common/langsLspEtAl.nix

@@ -9,7 +9,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
 
-    ../../common/containers.nix
+    ../../common/docker.nix
     ../../common/gpg.nix
     ../../common/langsLspEtAl.nix
     ../../common/networking.nix
