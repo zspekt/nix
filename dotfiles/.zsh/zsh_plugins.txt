@@ -17,7 +17,7 @@ ohmyzsh/ohmyzsh path:plugins/gh kind:defer
 
 ohmyzsh/ohmyzsh path:plugins/alias-finder
 
-ohmyzsh/ohmyzsh path:plugins/podman
+# ohmyzsh/ohmyzsh path:plugins/podman
 
  
 ohmyzsh/ohmyzsh path:plugins/docker

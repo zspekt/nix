@@ -74,8 +74,8 @@ setopt HIST_FIND_NO_DUPS
 
 # alias cat=bat
 
-alias pd=podman
-alias pc=podman-compose
+alias d=docker
+alias dc=docker-compose
 
 alias kc=kubectl
 

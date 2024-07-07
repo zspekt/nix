@@ -17,8 +17,6 @@
       };
 
       daemon.settings.data-root = "/home/zspekt/.dockerDaemonRoot/";
-
-      defaltNetwork.settings.dns_enabled = true;
     };
 
     containers = {
