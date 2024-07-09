@@ -50,6 +50,9 @@
     btop
     htop
 
+    # disk utils
+    gptfdisk
+
     # bloat
     neofetch
     cmatrix
