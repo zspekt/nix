@@ -79,7 +79,7 @@ alias dc=docker-compose
 
 alias kc=kubectl
 
-alias fdot="find . | fzf"
+alias lzd=lazydocker
 
 alias startx="Hyprland"
 
