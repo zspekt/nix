@@ -1,8 +1,9 @@
-{ ... }:
+{ unstable, ... }:
 {
   # Enable the OpenSSH daemon.
 
   programs.ssh = {
+    package = unstable.openssh;
     startAgent = false;
     extraConfig = ''
       Host 192.168.1.128
