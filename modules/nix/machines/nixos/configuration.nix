@@ -10,6 +10,7 @@
     ./hardware-configuration.nix
     ./nvidia.nix
 
+    ../../common/kube.nix
     ../../common/docker.nix
     ../../common/gpg.nix
     ../../common/gui.nix
