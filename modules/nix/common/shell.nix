@@ -50,6 +50,10 @@
     btop
     htop
 
+    # net
+    nmap
+    netcat
+
     # disk utils
     gptfdisk
 
