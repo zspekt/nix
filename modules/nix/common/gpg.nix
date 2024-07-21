@@ -1,6 +1,10 @@
 { pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [ pinentry-gnome3 ];
+  environment.systemPackages = with pkgs; [
+    pinentry-gnome3
+    yubikey-manager
+    yubico-piv-tool
+  ];
 
   # Enable GPG at a system level 
   programs.gnupg.agent = {
