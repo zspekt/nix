@@ -1,5 +1,7 @@
 local cmp = require "cmp"
 
+local ls = require "luasnip"
+
 local lspkind = require "lspkind"
 lspkind.init {}
 
@@ -43,5 +45,19 @@ local options = {
     ["<C-e>"] = cmp.mapping.close(),
   },
 }
+
+vim.keymap.set({ "i", "s" }, "<c-k>", function()
+  if ls.expand_or_jumpable() then
+    ls.expand_or_jump()
+  end
+end, { silent = true }
+)
+
+vim.keymap.set({ "i", "s" }, "<c-j>", function()
+  if ls.jumpable(-1) then
+    ls.jump(-1)
+  end
+end, { silent = true }
+)
 
 return options
