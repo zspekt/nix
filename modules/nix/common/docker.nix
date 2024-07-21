@@ -11,10 +11,10 @@
         enable = true;
         flags = [ "-af" ];
       };
-      rootless = {
-        enable = true;
-        setSocketVariable = true;
-      };
+      # rootless = {
+      #   enable = true;
+      #   setSocketVariable = true;
+      # };
 
       daemon.settings.data-root = "/home/zspekt/.dockerDaemonRoot/";
     };
