@@ -1,4 +1,4 @@
-{ hostname, ... }:
+{ hostname, pkgs, ... }:
 {
   systemd.network.enable = true;
   networking = {
@@ -7,5 +7,7 @@
     useDHCP = true;
     useNetworkd = true;
     networkmanager.enable = false;
+
+    environment.systemPackages = with pkgs; [ wireguard-tools ];
   };
 }
