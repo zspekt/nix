@@ -54,7 +54,9 @@
     stylelint
 
     # c
-    # clang-format not available
+    # clang-format # not available
+    ccls
+    rocmPackages_5.llvm.clang-unwrapped
 
     # misc
     gcc

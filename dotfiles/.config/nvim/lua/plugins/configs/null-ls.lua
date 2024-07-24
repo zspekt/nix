@@ -36,6 +36,10 @@ local opts = {
     null_ls.builtins.code_actions.statix,
   },
 
+  -- c
+  null_ls.builtins.formatting.clang_format,
+  null_ls.builtins.diagnostics.clang_check,
+
   on_attach = function(client, bufnr)
     if client.supports_method "textDocument/formatting" then
       vim.api.nvim_clear_autocmds {
