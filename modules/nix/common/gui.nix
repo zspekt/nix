@@ -25,6 +25,10 @@
     # msging apps
     discord-screenaudio
     unstable.discord
+    (pkgs.discord.override {
+      withOpenASAR = true;
+      withVencord = true;
+    })
     webcord
     tg
     telegram-desktop
@@ -39,6 +43,8 @@
 
     # theming
     glib
+    libsForQt5.qt5.qtwayland
+    qt5.full
 
     # players
     mpv
@@ -49,6 +55,8 @@
     wl-clipboard
     xwaylandvideobridge
     steam
+    clipman
+    cliphist
   ];
 
   # simply adding 'nerdfonts' will install 5G worth of fonts

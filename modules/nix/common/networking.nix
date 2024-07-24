@@ -9,5 +9,8 @@
     networkmanager.enable = false;
   };
 
-  environment.systemPackages = with pkgs; [ wireguard-tools ];
+  environment.systemPackages = with pkgs; [
+    wireguard-tools
+    traceroute
+  ];
 }
