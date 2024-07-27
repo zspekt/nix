@@ -60,5 +60,8 @@
     # bloat
     neofetch
     cmatrix
+
+    # misc
+    qmk # corne
   ];
 }
