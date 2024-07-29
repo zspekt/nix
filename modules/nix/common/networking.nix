@@ -13,4 +13,8 @@
     wireguard-tools
     traceroute
   ];
+
+  users.users.zspekt = {
+    extraGroups = [ "networkmanager" ];
+  };
 }

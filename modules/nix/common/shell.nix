@@ -63,5 +63,6 @@
 
     # misc
     qmk # corne
+    ydotool
   ];
 }

@@ -17,6 +17,7 @@
     ../../common/openssh.nix
     ../../common/shell.nix
     ../../common/sound.nix
+    ../../common/ydotool.nix
     ../../common/user.nix
   ];
 
