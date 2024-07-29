@@ -21,6 +21,7 @@
 
     # browser
     firefox
+    chromium
 
     # msging apps
     discord-screenaudio
@@ -57,6 +58,7 @@
     steam
     clipman
     cliphist
+    xdg-utils
   ];
 
   # simply adding 'nerdfonts' will install 5G worth of fonts

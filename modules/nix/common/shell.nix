@@ -61,6 +61,9 @@
     neofetch
     cmatrix
 
+    # killing
+    killall
+
     # misc
     qmk # corne
     ydotool
