@@ -7,7 +7,7 @@ return {
     local wk = require('which-key')
     wk.register({
       ["fs"] = { "<cmd> Telescope persisted <CR>", "Find sessions" },
-      ['fz'] = { builtin.current_buffer_fuzzy_find, "Find in current buffer" },
+      ['/'] = { builtin.current_buffer_fuzzy_find, "Find in current buffer" },
       ['ff'] = { builtin.find_files, "Find File" },
       ['fb'] = { builtin.buffers, "Find Buffer" },
       ['fw'] = { builtin.live_grep, "Find with Grep" },

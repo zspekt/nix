@@ -57,7 +57,6 @@ return {
       end
 
       lspconfig.tsserver.setup {
-        on_attach = on_attach,
         capabilities = capabilities,
         handlers = handlers,
         init_options = {
@@ -75,7 +74,6 @@ return {
 
       -- Pyright setup
       lspconfig.pyright.setup {
-        on_attach = on_attach,
         capabilities = capabilities,
         handlers = handlers,
         filetypes = { "python" },
@@ -83,7 +81,6 @@ return {
 
       -- BashLS setup
       lspconfig.bashls.setup {
-        on_attach = on_attach,
         capabilities = capabilities,
         handlers = handlers,
         filetypes = { "shell", "bash", "zsh", "sh" },
@@ -91,7 +88,6 @@ return {
 
       -- Gopls setup
       lspconfig.gopls.setup {
-        on_attach = on_attach,
         capabilities = capabilities,
         handlers = handlers,
         filetypes = { "go", "gomod", "gowork", "gotmpl" },
@@ -110,7 +106,6 @@ return {
 
       -- DockerLS setup
       lspconfig.dockerls.setup {
-        on_attach = on_attach,
         capabilities = capabilities,
         handlers = handlers,
         cmd = { "docker-langserver", "--stdio" },
@@ -121,7 +116,6 @@ return {
 
       -- Docker Compose Language Service setup
       lspconfig.docker_compose_language_service.setup {
-        on_attach = on_attach,
         capabilities = capabilities,
         handlers = handlers,
         cmd = { "docker-compose-langserver", "--stdio" },
@@ -132,7 +126,6 @@ return {
 
       -- SQL Language Server setup
       lspconfig.sqlls.setup {
-        on_attach = on_attach,
         capabilities = capabilities,
         handlers = handlers,
         filetypes = { "sql", "pgsql", "mysql" },
@@ -143,21 +136,18 @@ return {
 
       -- HTML setup
       lspconfig.html.setup {
-        on_attach = on_attach,
         capabilities = capabilities,
         handlers = handlers,
       }
 
       -- CSS Language Server setup
       lspconfig.cssls.setup {
-        on_attach = on_attach,
         capabilities = capabilities,
         handlers = handlers,
       }
 
       -- CCLS setup
       lspconfig.ccls.setup {
-        on_attach = on_attach,
         capabilities = capabilities,
         handlers = handlers,
         init_options = {
@@ -173,13 +163,11 @@ return {
 
       -- nix
       lspconfig.nil_ls.setup {
-        on_attach = on_attach,
         capabilities = capabilities,
         handlers = handlers,
       }
 
       lspconfig.lua_ls.setup({
-        on_attach = on_attach,
         capabilities = capabilities,
         handlers = handlers,
         settings = {
