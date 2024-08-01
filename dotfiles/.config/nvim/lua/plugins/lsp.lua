@@ -43,7 +43,8 @@ capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp"
 return {
   {
     "neovim/nvim-lspconfig",
-    lazy = false,
+    lazy = true,
+    event = "VeryLazy",
     config = function()
       local lspconfig = require("lspconfig")
 
