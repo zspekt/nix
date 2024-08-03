@@ -34,15 +34,10 @@ local options = {
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
     ["<down>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
     ["<up>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
-    ["<C-h>"] = cmp.mapping(
-      cmp.mapping.confirm {
-        behavior = cmp.ConfirmBehavior.Insert,
-        select = true,
-      },
-      { "i", "c" }
-    ),
-    ["<C-l>"] = cmp.mapping.complete(),
+    ["<left>"] = cmp.mapping.confirm { behavior = cmp.ConfirmBehavior.Insert, select = true},
+    ["<right>"] = cmp.mapping.complete(),
     ["<C-e>"] = cmp.mapping.close(),
+
   },
 }
 

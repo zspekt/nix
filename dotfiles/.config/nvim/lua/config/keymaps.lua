@@ -16,6 +16,7 @@ set('n', '<leader>trn', "<cmd> set rnu! <CR>", { desc = "Toggle relative line nu
 set("n", "<right>", "<cmd> bnext <CR>", { desc = "Next buffer" })
 set("n", "<left>", "<cmd> bprevious <CR>", { desc = "Previous buffer" })
 set("n", "<leader>bd", "<cmd> bd <CR>", { desc = "Close buffer" })
+set("n", "<leader>bD", "<cmd> bd! <CR>", { desc = "Close buffer with unsaved changes" })
 
 -- tabs
 set("n", "<Tab>", "<cmd> tabnext <CR>", { desc = "Next tab" })
