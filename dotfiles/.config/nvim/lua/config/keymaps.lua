@@ -1,11 +1,9 @@
 local set = vim.keymap.set
 
-set('i', '<up>', "<Nop>", {})
-set('i', '<down>', "<Nop>", {})
-set('i', '<left>', "<Nop>", {})
-set('i', '<right>', "<Nop>", {})
-set('i', '<C-h>', "<Nop>", {})
-set('i', '<C-l>', "<Nop>", {})
+set('i', '<C-H>', "<Nop>", {})
+set('i', '<C-J>', "<Nop>", {})
+set('i', '<C-K>', "<Nop>", {})
+set('i', '<C-L>', "<Nop>", {})
 
 set('n', '<Esc>', "<cmd> noh <CR>", { desc = "Clear highlights" })
 set('n', '<C-c>', "<cmd> %y+ <CR>", { desc = "Copy whole file" })

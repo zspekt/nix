@@ -30,24 +30,26 @@ local options = {
   },
 
   mapping = {
-    ["<C-d>"] = cmp.mapping.scroll_docs(-4),
-    ["<C-f>"] = cmp.mapping.scroll_docs(4),
-    ["<down>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
-    ["<up>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
-    ["<right>"] = cmp.mapping.confirm { behavior = cmp.ConfirmBehavior.Insert, select = true},
-    ["<left>"] = cmp.mapping.complete(),
-    ["<C-e>"] = cmp.mapping.close(),
+    ["<C-D>"] = cmp.mapping.scroll_docs(-4),
+    ["<C-F>"] = cmp.mapping.scroll_docs(4),
+
+    ["<C-J>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
+    ["<C-K>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
+    ["<C-L>"] = cmp.mapping.confirm { behavior = cmp.ConfirmBehavior.Insert, select = true },
+    ["<C-H>"] = cmp.mapping.complete(),
+
+    ["<C-E>"] = cmp.mapping.close(),
   },
 }
 
-vim.keymap.set({ "i", "s" }, "<c-k>", function()
+vim.keymap.set({ "i", "s" }, "<C-S-K>", function()
   if ls.expand_or_jumpable() then
     ls.expand_or_jump()
   end
 end, { silent = true }
 )
 
-vim.keymap.set({ "i", "s" }, "<c-j>", function()
+vim.keymap.set({ "i", "s" }, "<C-S-J>", function()
   if ls.jumpable(-1) then
     ls.jump(-1)
   end
