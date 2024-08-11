@@ -58,6 +58,9 @@
     ccls
     rocmPackages_5.llvm.clang-unwrapped
 
+    # yaml
+    yaml-language-server
+
     # misc
     gcc
     nodePackages.prettier

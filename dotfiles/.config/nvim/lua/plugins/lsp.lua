@@ -124,6 +124,19 @@ return {
         single_file_support = true,
       }
 
+      -- yaml
+      lspconfig.yamlls.setup {
+        capabilities = capabilities,
+        handlers = handlers,
+        settings = {
+          yaml = {
+            schemas = {
+              ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+            },
+          },
+        }
+      }
+
       -- SQL Language Server setup
       lspconfig.sqlls.setup {
         capabilities = capabilities,
@@ -167,6 +180,8 @@ return {
         handlers = handlers,
       }
 
+
+      -- lua
       lspconfig.lua_ls.setup({
         capabilities = capabilities,
         handlers = handlers,
