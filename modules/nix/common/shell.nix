@@ -26,12 +26,15 @@
     unstable.neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     vim
 
+    # git
+    gh
+    git
+    lazygit
+
     # cli utilities
     calc
     tldr
     zoxide
-    gh
-    git
     pass-wayland
     wget
     curl

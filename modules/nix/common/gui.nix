@@ -25,6 +25,7 @@
 
     # msging apps
     discord-screenaudio
+    betterdiscordctl
     unstable.discord
     (pkgs.discord.override {
       withOpenASAR = true;
@@ -33,6 +34,8 @@
     webcord
     tg
     telegram-desktop
+
+    vesktop
 
     # pdf reader
     zathura
