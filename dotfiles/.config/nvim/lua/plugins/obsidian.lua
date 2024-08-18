@@ -22,6 +22,23 @@ return {
     "nvim-telescope/telescope.nvim",
     -- see below for full list of optional dependencies 👇
   },
+  keys = {
+    {
+      "<leader>fn",
+      "<cmd>ObsidianSearch<CR>",
+      desc = "Find notes"
+    },
+    {
+      "<leader>nn",
+      "<cmd>ObsidianNew<CR>",
+      desc = "New note",
+    },
+    {
+      "<leader>nt",
+      "<cmd>ObsidianNewFromTemplate<CR>",
+      desc = "New note from template",
+    },
+  },
   opts = {
     workspaces = {
       {
