@@ -127,7 +127,7 @@ return {
 
           vim.keymap.set(
             "n",
-            opts.mappings and opts.mappings.change_cwd or "gc",
+            opts.mappings and opts.mappings.change_cwd or "~",
             files_set_cwd,
             { buffer = args.data.buf_id, desc = "Set cwd" }
           )
