@@ -24,6 +24,8 @@ vim.opt.scrolloff = 10
 vim.opt.wrap = false
 vim.opt.colorcolumn = "80"
 
+vim.opt.conceallevel = 1
+
 -- Enable mouse mode
 vim.o.mouse = "a"
 

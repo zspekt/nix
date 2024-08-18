@@ -35,7 +35,8 @@
     tg
     telegram-desktop
 
-    vesktop
+    vesktop # something something screenshare with audio
+    xwaylandvideobridge
 
     # pdf reader
     zathura
@@ -54,13 +55,17 @@
     mpv
     vlc
 
+    # notes
+    obsidian
+
     # misc
     wev
-    wl-clipboard
-    xwaylandvideobridge
     steam
+
+    wl-clipboard
     clipman
     cliphist
+
     xdg-utils
   ];
 
