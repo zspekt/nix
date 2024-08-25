@@ -53,10 +53,6 @@
     btop
     htop
 
-    # net
-    nmap
-    netcat
-
     # disk utils
     gptfdisk
 
@@ -66,6 +62,9 @@
 
     # killing
     killall
+
+    # msging
+    tg
 
     # misc
     qmk # corne

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, unstable, ... }:
 {
   # langs, linters, formatters, lsps, etc
   environment.systemPackages = with pkgs; [
@@ -9,11 +9,11 @@
     statix
 
     # go
-    go
-    gopls
-    gofumpt
-    goimports-reviser
-    golines
+    unstable.go
+    unstable.gopls
+    unstable.gofumpt
+    unstable.goimports-reviser
+    unstable.golines
 
     # lua
     stylua

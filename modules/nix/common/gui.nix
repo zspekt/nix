@@ -21,7 +21,6 @@
 
     # browser
     firefox
-    chromium
 
     # msging apps
     discord-screenaudio
@@ -32,7 +31,6 @@
       withVencord = true;
     })
     webcord
-    tg
     telegram-desktop
 
     vesktop # something something screenshare with audio
@@ -55,8 +53,21 @@
     mpv
     vlc
 
+    # streaming
+    stremio
+
     # notes
     obsidian
+
+    # torrent
+    qbittorrent
+
+    # archives
+    unrar
+
+    # file explorers
+    dolphin
+    xfce.thunar
 
     # misc
     wev
