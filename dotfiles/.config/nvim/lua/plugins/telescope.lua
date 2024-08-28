@@ -4,6 +4,9 @@ return {
   lazy = true,
   event = "VeryLazy",
   cmd = "Telescope",
+  config = function()
+    require("telescope").load_extension("persisted")
+  end,
   init = function()
     local builtin = require('telescope.builtin')
     local wk = require('which-key')
@@ -11,6 +14,10 @@ return {
       ["fs"] = { "<cmd> Telescope persisted <CR>", "Find sessions" },
       ['/'] = { builtin.current_buffer_fuzzy_find, "Find in current buffer" },
       ['ff'] = { builtin.find_files, "Find File" },
+      ['fo'] = { builtin.oldfiles, "Find previous files" },
+      ['fa'] = { function()
+        require('telescope.builtin').find_files({ hidden = true, no_ignore = true, })
+      end, "Find all files" },
       ['fb'] = { builtin.buffers, "Find Buffer" },
       ['fw'] = { builtin.live_grep, "Find with Grep" },
 
