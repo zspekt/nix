@@ -13,6 +13,8 @@
 
       allowPing = true;
       allowedTCPPorts = [
+        56810
+        56811
         56812 # openwrt logs
         63879 # qbittorrent
       ];

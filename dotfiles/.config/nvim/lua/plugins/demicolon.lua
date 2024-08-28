@@ -1,0 +1,46 @@
+return {
+  -- {
+  --   'mawkler/demicolon.nvim',
+  --   -- keys = { ';', ',', 't', 'f', 'T', 'F', ']', '[', ']d', '[d' }, -- Uncomment this to lazy load
+  --   dependencies = {
+  --     -- 'jinh0/eyeliner.nvim',
+  --     'nvim-treesitter/nvim-treesitter',
+  --     'nvim-treesitter/nvim-treesitter-textobjects',
+  --   },
+  --   opts = {
+  --     -- Create default keymaps
+  --     keymaps = {
+  --       -- Create `t`/`T`/`f`/`F` key mappings
+  --       horizontal_motions = false,
+  --     },
+  --     integrations = {
+  --       -- Integration with https://github.com/lewis6991/gitsigns.nvim
+  --       gitsigns = {
+  --         enabled = true,
+  --         keymaps = {
+  --           next = ']c',
+  --           prev = '[c',
+  --         },
+  --       },
+  --     },
+  --   },
+  --   config = function(_, opts)
+  --     require('demicolon').setup(opts)
+  --     local function eyeliner_jump(key)
+  --       local forward = vim.list_contains({ 't', 'f' }, key)
+  --       return function()
+  --         require('eyeliner').highlight({ forward = forward })
+  --         return require('demicolon.jump').horizontal_jump(key)()
+  --       end
+  --     end
+  --
+  --     local nxo = { 'n', 'x', 'o' }
+  --     local opts = { expr = true }
+  --
+  --     vim.keymap.set(nxo, 'f', eyeliner_jump('f'), opts)
+  --     vim.keymap.set(nxo, 'F', eyeliner_jump('F'), opts)
+  --     vim.keymap.set(nxo, 't', eyeliner_jump('t'), opts)
+  --     vim.keymap.set(nxo, 'T', eyeliner_jump('T'), opts)
+  --   end
+  -- }
+}
