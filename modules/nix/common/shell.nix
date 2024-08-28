@@ -52,6 +52,7 @@
     # monitoring
     btop
     htop
+    lsof
 
     # disk utils
     gptfdisk
