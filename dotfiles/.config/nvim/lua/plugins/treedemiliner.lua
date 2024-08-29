@@ -36,28 +36,27 @@ return {
   },
   {
     'mawkler/demicolon.nvim',
+    lazy = false,
     dependencies = {
       'jinh0/eyeliner.nvim',
       'nvim-treesitter/nvim-treesitter',
       'nvim-treesitter/nvim-treesitter-textobjects'
     },
-    keys = { ';', ',', 't', 'f', 'T', 'F', ']', '[', ']d', '[d' },
+    -- keys = { ';', ',', 't', 'f', 'T', 'F', ']', '[', ']d', '[d' },
     config = function()
       require('demicolon').setup({
         keymaps = {
           horizontal_motions = false,
-          integrations = {
-            -- Integration with https://github.com/lewis6991/gitsigns.nvim
-            gitsigns = {
-              enabled = true,
-              keymaps = {
-                next = ']g',
-                prev = '[g',
-              },
+        },
+        integrations = {
+          -- Integration with https://github.com/lewis6991/gitsigns.nvim
+          gitsigns = {
+            enabled = true,
+            keymaps = {
+              next = ']g',
+              prev = '[g',
             },
           },
-
-
         },
       })
 

@@ -15,8 +15,9 @@ return {
 
       vim.keymap.set("n", "<leader>gd", ":Gitsigns diffthis<CR>")
 
-      vim.keymap.set("n", "]g", ":Gitsigns next_hunk<CR>")
-      vim.keymap.set("n", "[g", ":Gitsigns prev_hunk<CR>")
+      -- commented out because demicolon takes care of this now
+      -- vim.keymap.set("n", "]g", ":Gitsigns next_hunk<CR>")
+      -- vim.keymap.set("n", "[g", ":Gitsigns prev_hunk<CR>")
       vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>")
       vim.keymap.set("n", "<leader>ghv", ":Gitsigns select_hunk<CR>")
     end,
