@@ -9,6 +9,7 @@
         ./dotlinks/waybarDesktop.nix
         ./dotlinks/kitty.nix
         ./dotlinks/rofi.nix
+        ./dotlinks/mako.nix
       ]
 
     else if "${hostname}" == "nixth" then
@@ -17,6 +18,7 @@
         ./dotlinks/waybarThpad.nix
         ./dotlinks/kitty.nix
         ./dotlinks/rofi.nix
+        ./dotlinks/mako.nix
       ]
     else if "${hostname}" == "nixpi" then
       [ ]

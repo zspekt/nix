@@ -22,6 +22,10 @@
     # browser
     firefox
 
+    # notif
+    mako
+    libnotify
+
     # msging apps
     discord-screenaudio
     betterdiscordctl
