@@ -32,7 +32,12 @@ return {
       highlight_on_key = true,
       dim = true,
       default_keymaps = false,
-    }
+    },
+    config = function(_, opts)
+      require('eyeliner').setup(opts)
+      vim.api.nvim_set_hl(0, 'EyelinerPrimary', { fg = '#ff9e3b', bold = true, underline = true })
+      vim.api.nvim_set_hl(0, 'EyelinerSecondary', { fg = '#fa5b60', underline = true })
+    end
   },
   {
     'mawkler/demicolon.nvim',
