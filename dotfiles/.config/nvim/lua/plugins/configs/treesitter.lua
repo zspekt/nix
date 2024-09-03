@@ -1,50 +1,68 @@
--- local treesitter = require "nvim-treesitter"
+return {
+  ensure_installed = {
+    "awk",
+    "bash",
+    "c",
+    "css",
+    "diff",
+    "dockerfile",
 
-local M = {}
+    "git_config",
+    "git_rebase",
+    "gitattributes",
+    "gitcommit",
+    "gitignore",
 
-M.setup = function()
-  local group = vim.api.nvim_create_augroup("custom-treesitter", { clear = true })
+    "go",
+    "goctl",
+    "gomod",
+    "gosum",
+    "gotmpl",
+    "gowork",
+    "godot_resource",
 
-  require("nvim-treesitter").setup {
-    ensure_install = "community",
-  }
+    "hyprlang",
 
-  local syntax_on = {
-    elixir = true,
-    php = true,
-  }
 
-  vim.api.nvim_create_autocmd("FileType", {
-    group = group,
-    callback = function(args)
-      local bufnr = args.buf
-      local ft = vim.bo[bufnr].filetype
-      pcall(vim.treesitter.start)
+    "gpg",
+    "lua",
+    "python",
+    "yaml",
+    "json",
+    "jsonc",
+    "json5",
 
-      if syntax_on[ft] then
-        vim.bo[bufnr].syntax = "on"
-      end
-    end,
-  })
+    "lua",
+    "luadoc",
 
-  vim.api.nvim_create_autocmd("User", {
-    pattern = "TSUpdate",
-    callback = function()
-      local parsers = require "nvim-treesitter.parsers"
+    "markdown",
+    "nginx",
 
-      parsers.lua = {
-        tier = 0,
+    "nix",
+    "regex",
 
-        ---@diagnostic disable-next-line: missing-fields
-        install_info = {
-          path = "~/plugins/tree-sitter-lua",
-          files = { "src/parser.c", "src/scanner.c" },
-        },
-      }
-    end,
-  })
-end
+    "sql",
+    "ssh_config",
+    "tmux",
 
-M.setup()
+    "vim",
+    "vimdoc",
 
-return M
+    "xml",
+
+    "html",
+    "c",
+  },
+  highlight = {
+    enable = true,
+    use_languagetree = true,
+  },
+  indent = { enable = true },
+  autotag = {
+    enable = true,
+    enable_rename = true,
+    enable_close = true,
+    enable_close_on_slash = true,
+    filetypes = { "html", "xml" },
+  },
+}

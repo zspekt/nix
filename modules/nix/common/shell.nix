@@ -39,6 +39,7 @@
     wget
     curl
     tmux
+    tmuxinator
     coreutils
     antidote
     bat
