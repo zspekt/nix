@@ -6,7 +6,6 @@ local opts = {
     -- python
     null_ls.builtins.formatting.black,
     null_ls.builtins.diagnostics.mypy,
-    null_ls.builtins.diagnostics.ruff,
 
     -- go
     null_ls.builtins.formatting.gofumpt,
@@ -15,9 +14,6 @@ local opts = {
 
     -- js/ts
     null_ls.builtins.formatting.biome,
-
-    -- zsh
-    null_ls.builtins.formatting.beautysh,
 
     -- sql
     null_ls.builtins.formatting.pg_format,
@@ -38,7 +34,6 @@ local opts = {
 
   -- c
   null_ls.builtins.formatting.clang_format,
-  null_ls.builtins.diagnostics.clang_check,
 
   on_attach = function(client, bufnr)
     if client.supports_method "textDocument/formatting" then

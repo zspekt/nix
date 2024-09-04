@@ -10,19 +10,13 @@ return {
     config = function()
       require("gopher").setup()
       local wk = require("which-key")
-      wk.register({
-        g = {
-          s = {
-            name = "Struct Tags",
-            j = { "<cmd>GoTagAdd json<CR>", "Add json struct tags" },
-            y = { "<cmd>GoTagAdd yaml<CR>", "Add yaml struct tags" },
-          },
-          a = {
-            name = "Add",
-            i = { "<cmd>GoIfErr<CR>", "Add if != err statement" },
-          },
-        },
-      }, { prefix = "<leader>" })
+      wk.add({
+        { "<leader>ga",  group = "Add" },
+        { "<leader>gai", "<cmd>GoIfErr<CR>",       desc = "Add if != err statement" },
+        { "<leader>gs",  group = "Struct Tags" },
+        { "<leader>gsj", "<cmd>GoTagAdd json<CR>", desc = "Add json struct tags" },
+        { "<leader>gsy", "<cmd>GoTagAdd yaml<CR>", desc = "Add yaml struct tags" },
+      })
     end,
     build = function()
       vim.cmd [[silent! GoInstallDeps]]

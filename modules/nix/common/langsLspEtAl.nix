@@ -14,6 +14,7 @@
     unstable.gofumpt
     unstable.goimports-reviser
     unstable.golines
+    unstable.gotools
 
     # lua
     stylua
