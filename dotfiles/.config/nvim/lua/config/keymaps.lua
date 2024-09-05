@@ -25,12 +25,6 @@ set("n", "<S-left>", "<cmd> tabprevious <CR>", { desc = "Previous tab" })
 set("n", "<leader>tn", "<cmd> tabnew <CR>", { desc = "New tab" })
 set("n", "<leader>td", "<cmd> tabclose <CR>", { desc = "Close tab" })
 
--- Neogit
-set("n", "<leader>ggn", "<cmd> Neogit <CR>", { desc = "Neogit" })
-set("n", "<leader>ggp", "<cmd> Neogit pull <CR>", { desc = "Neogit pull" })
-set("n", "<leader>ggP", "<cmd> Neogit push <CR>", { desc = "Neogit push" })
-set("n", "<leader>ggc", "<cmd> Neogit commit <CR>", { desc = "Neogit commit" })
-
 -- QF navigation
 set('n', '<leader>,', "<cmd> cprev <CR>", { desc = "Previous QF list element" })
 set('n', '<leader>.', "<cmd> cnext <CR>", { desc = "Next QF list element" })
