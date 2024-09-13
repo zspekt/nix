@@ -36,6 +36,7 @@
     })
     webcord
     telegram-desktop
+    unstable.simplex-chat-desktop
 
     vesktop # something something screenshare with audio
     xwaylandvideobridge
