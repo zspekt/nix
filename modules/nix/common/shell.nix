@@ -1,4 +1,4 @@
-{ pkgs, unstable, ... }:
+{ inputs, pkgs, ... }:
 {
 
   programs = {
@@ -8,6 +8,7 @@
     neovim = {
       enable = true;
       defaultEditor = true;
+      package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
     };
   };
 
@@ -21,10 +22,7 @@
   users.defaultUserShell = pkgs.zsh;
 
   environment.systemPackages = with pkgs; [
-
-    # editor
-    unstable.neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    vim
+    vim # just in case
 
     # git
     gh

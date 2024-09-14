@@ -10,56 +10,61 @@
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs =
-    {
-      nixpkgs,
-      unstable,
-      home-manager,
-      ...
-    }:
+    { self, ... }@inputs:
     let
       system = "x86_64-linux";
+      overlays = [ inputs.neovim-nightly-overlay.overlays.default ];
     in
     {
       ####### desktop ##########################################################
       # nixosConfigurations.<hostname>
-      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.nixos = inputs.nixpkgs.lib.nixosSystem {
         inherit system;
-        modules = [ ./modules/nix/machines/nixos/configuration.nix ];
+        modules = [
+          ./modules/nix/machines/nixos/configuration.nix
+          { nixpkgs.overlays = overlays; }
+        ];
         specialArgs = {
+          inherit inputs;
           hostname = "nixos";
-          unstable = import unstable {
+          unstable = import inputs.unstable {
             inherit system;
             config.allowUnfree = true;
           };
         };
       };
 
-      homeConfigurations."zspekt@nixos" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${system};
-        modules = [ ./modules/home-manager/users/zspekt/home.nix ];
+      homeConfigurations."zspekt@nixos" = inputs.home-manager.lib.homeManagerConfiguration {
+        pkgs = inputs.nixpkgs.legacyPackages.${system};
+        modules = [
+          ./modules/home-manager/users/zspekt/home.nix
+          { nixpkgs.overlays = overlays; }
+        ];
         extraSpecialArgs = {
           hostname = "nixos";
         };
       };
 
       ####### thinkpad #########################################################
-      nixosConfigurations.nixth = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.nixth = inputs.nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [ ./modules/nix/machines/nixth/configuration.nix ];
         specialArgs = {
           hostname = "nixth";
-          unstable = import unstable {
+          unstable = import inputs.unstable {
             inherit system;
             config.allowUnfree = true;
           };
         };
       };
 
-      homeConfigurations."zspekt@nixth" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${system};
+      homeConfigurations."zspekt@nixth" = inputs.home-manager.lib.homeManagerConfiguration {
+        pkgs = inputs.nixpkgs.legacyPackages.${system};
         modules = [ ./modules/home-manager/users/zspekt/home.nix ];
         extraSpecialArgs = {
           hostname = "nixth";
@@ -67,20 +72,20 @@
       };
 
       ####### raspi ############################################################
-      nixosConfigurations.nixpi = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.nixpi = inputs.nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
         modules = [ ./modules/nix/machines/nixpi/configuration.nix ];
         specialArgs = {
           hostname = "nixpi";
-          unstable = import unstable {
+          unstable = import inputs.unstable {
             system = "aarch64-linux";
             config.allowUnfree = true;
           };
         };
       };
 
-      homeConfigurations."zspekt@nixpi" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${"aarch64-linux"};
+      homeConfigurations."zspekt@nixpi" = inputs.home-manager.lib.homeManagerConfiguration {
+        pkgs = inputs.nixpkgs.legacyPackages.${"aarch64-linux"};
         modules = [ ./modules/home-manager/users/zspekt/home.nix ];
         extraSpecialArgs = {
           hostname = "nixpi";
