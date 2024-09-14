@@ -57,7 +57,7 @@ return {
         vim.lsp.buf.execute_command(params)
       end
 
-      lspconfig.tsserver.setup {
+      lspconfig.ts_ls.setup {
         capabilities = capabilities,
         handlers = handlers,
         init_options = {
