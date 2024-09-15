@@ -30,42 +30,53 @@
   # whereas target defines the path within home where we want the links
   # when linking a dir, the whole dir will be read-only — not just its contents
 
-  home.file = {
+  home.file =
+    let
+      dotfolder = ../../../../dotfiles;
+      config = dotfolder + /.config;
+    in
+    {
+      neovim = {
+        recursive = true;
+        source = config + /nvim;
+        target = "./.config/nvim";
+      };
 
-    neovim = {
-      recursive = true;
-      source = ../../../../dotfiles/.config/nvim;
-      target = "./.config/nvim";
-    };
+      zshPluginList = {
+        recursive = false;
+        source = dotfolder + /.zsh/zsh_plugins.txt;
+        target = "./.zsh/zsh_plugins.txt";
+      };
 
-    zshPluginList = {
-      recursive = false;
-      source = ../../../../dotfiles/.zsh/zsh_plugins.txt;
-      target = "./.zsh/zsh_plugins.txt";
-    };
+      zshrc = {
+        recursive = false;
+        source = dotfolder + /.zshrc;
+        target = "./.zshrc";
+      };
 
-    zshrc = {
-      recursive = false;
-      source = ../../../../dotfiles/.zshrc;
-      target = "./.zshrc";
-    };
+      p10k = {
+        recursive = false;
+        source = dotfolder + /.p10k.zsh;
+        target = "./.p10k.zsh";
+      };
 
-    p10k = {
-      recursive = false;
-      source = ../../../../dotfiles/.p10k.zsh;
-      target = "./.p10k.zsh";
-    };
+      tmux = {
+        recursive = false;
+        source = config + /tmux/tmux.conf;
+        target = ".config/tmux/tmux.conf";
+      };
 
-    tmux = {
-      recursive = false;
-      source = ../../../../dotfiles/.config/tmux/tmux.conf;
-      target = ".config/tmux/tmux.conf";
-    };
+      tmuxTpm = {
+        recursive = true;
+        source = dotfolder + /.tmux/plugins/tpm;
+        target = ".tmux/plugins/tpm";
+      };
 
-    tmuxTpm = {
-      recursive = true;
-      source = ../../../../dotfiles/.tmux/plugins/tpm;
-      target = ".tmux/plugins/tpm";
+      scripts = {
+        recursive = true;
+        source = dotfolder + /scripts;
+        target = "./scripts";
+        executable = true;
+      };
     };
-  };
 }

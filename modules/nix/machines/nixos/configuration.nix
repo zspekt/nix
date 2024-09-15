@@ -19,6 +19,7 @@
     ../../common/openssh.nix
     ../../common/shell.nix
     ../../common/sound.nix
+    ../../common/bluetooth.nix
     ../../common/ydotool.nix
     ../../common/user.nix
   ];
