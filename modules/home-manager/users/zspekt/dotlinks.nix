@@ -74,8 +74,8 @@
 
       scripts = {
         recursive = true;
-        source = dotfolder + /scripts;
-        target = "./scripts";
+        source = dotfolder + /.local/bin;
+        target = "./.local/bin";
         executable = true;
       };
     };
