@@ -58,6 +58,7 @@
           { nixpkgs.overlays = overlays; }
         ];
         specialArgs = {
+          inherit inputs;
           hostname = "nixth";
           unstable = import inputs.unstable {
             inherit system;
@@ -82,6 +83,7 @@
           { nixpkgs.overlays = overlays; }
         ];
         specialArgs = {
+          inherit inputs;
           hostname = "nixpi";
           unstable = import inputs.unstable {
             system = "aarch64-linux";
