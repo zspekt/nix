@@ -15,6 +15,8 @@
     unstable.goimports-reviser
     unstable.golines
     unstable.gotools
+    unstable.delve
+    # unstable.gdlv GUI frontend for delve
 
     # lua
     stylua
@@ -44,7 +46,8 @@
     # shell
     shfmt
     shellcheck
-    beautysh
+    shellharden
+    unstable.bash-language-server
 
     # sql
     sqlfluff

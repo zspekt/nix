@@ -30,10 +30,14 @@ local opts = {
     null_ls.builtins.formatting.nixfmt,
     null_ls.builtins.diagnostics.statix,
     null_ls.builtins.code_actions.statix,
-  },
 
-  -- c
-  null_ls.builtins.formatting.clang_format,
+    -- shell
+    null_ls.builtins.formatting.shellharden,
+    null_ls.builtins.formatting.shfmt,
+
+    -- c
+    null_ls.builtins.formatting.clang_format,
+  },
 
   on_attach = function(client, bufnr)
     if client.supports_method "textDocument/formatting" then
