@@ -21,7 +21,7 @@ window {
 }
 
 prompt {
-    enabled: 						            false;
+    enabled: 						            true;
 	padding: 						              0px 0px 0px 2px;
 	background-color: 				        #00000000;
 	text-color: 					            @fg;
