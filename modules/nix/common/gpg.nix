@@ -4,6 +4,7 @@
     pinentry-gnome3
     yubikey-manager
     yubico-piv-tool
+    yubikey-touch-detector # one of these is redundant
   ];
 
   # Enable GPG at a system level 
@@ -15,6 +16,8 @@
 
   # Enable GPG Smartcards (Like Yubikeys)
   hardware.gpgSmartcards.enable = true;
+
+  programs.yubikey-touch-detector.enable = true; # one of these is redundant
 
   services.pcscd.enable = true;
   services.dbus.packages = [ pkgs.gcr ];
