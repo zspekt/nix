@@ -6,17 +6,17 @@
     package = unstable.openssh;
     startAgent = false;
     extraConfig = ''
-      Host 192.168.1.128
+      Host nixpi.lan
         # raspi
         ForwardAgent yes
         RemoteForward /run/user/1000/gnupg/S.gpg-agent /run/user/1000/gnupg/S.gpg-agent.extra
 
-      Host 192.168.1.244
+      Host nixth.lan
         # thinkpad
         ForwardAgent yes
         RemoteForward /run/user/1000/gnupg/S.gpg-agent /run/user/1000/gnupg/S.gpg-agent.extra
 
-      Host 192.168.1.162
+      Host nixos.lan
         # desktop
         ForwardAgent yes
         RemoteForward /run/user/1000/gnupg/S.gpg-agent /run/user/1000/gnupg/S.gpg-agent.extra
