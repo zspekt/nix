@@ -53,7 +53,10 @@
       ####### thinkpad #########################################################
       nixosConfigurations.nixth = inputs.nixpkgs.lib.nixosSystem {
         inherit system;
-        modules = [ ./modules/nix/machines/nixth/configuration.nix ];
+        modules = [
+          ./modules/nix/machines/nixth/configuration.nix
+          { nixpkgs.overlays = overlays; }
+        ];
         specialArgs = {
           hostname = "nixth";
           unstable = import inputs.unstable {
@@ -74,7 +77,10 @@
       ####### raspi ############################################################
       nixosConfigurations.nixpi = inputs.nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
-        modules = [ ./modules/nix/machines/nixpi/configuration.nix ];
+        modules = [
+          ./modules/nix/machines/nixpi/configuration.nix
+          { nixpkgs.overlays = overlays; }
+        ];
         specialArgs = {
           hostname = "nixpi";
           unstable = import inputs.unstable {
