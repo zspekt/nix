@@ -36,6 +36,9 @@ M.gitsigns = {
     changedelete = { text = "~" },
     untracked = { text = "│" },
   },
+  preview_config = {
+    border = 'rounded',
+  }
 }
 
 return M
