@@ -1,7 +1,7 @@
 import = [] # you can import other files
 
 [default_session]
-startup_command = "nvim -c ':Telescope git_files'"
+startup_command = "nvim -c ':lua require(\"telescope.builtin\").find_files({ hidden = true, no_ignore = true, })'"
 
 # [[session]]
 # name = "tcpLogger"
