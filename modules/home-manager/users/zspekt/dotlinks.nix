@@ -32,8 +32,8 @@
 
   home.file =
     let
-      dotfolder = ../../../../dotfiles;
-      config = dotfolder + /.config;
+      home = ../../../../dotfiles;
+      config = home + /.config;
     in
     {
       neovim = {
@@ -44,19 +44,19 @@
 
       zshPluginList = {
         recursive = false;
-        source = dotfolder + /.zsh/zsh_plugins.txt;
+        source = home + /.zsh/zsh_plugins.txt;
         target = "./.zsh/zsh_plugins.txt";
       };
 
       zshrc = {
         recursive = false;
-        source = dotfolder + /.zshrc;
+        source = home + /.zshrc;
         target = "./.zshrc";
       };
 
       p10k = {
         recursive = false;
-        source = dotfolder + /.p10k.zsh;
+        source = home + /.p10k.zsh;
         target = "./.p10k.zsh";
       };
 
@@ -68,7 +68,7 @@
 
       tmuxTpm = {
         recursive = true;
-        source = dotfolder + /.tmux/plugins/tpm;
+        source = home + /.tmux/plugins/tpm;
         target = ".tmux/plugins/tpm";
       };
 
@@ -86,7 +86,7 @@
 
       scripts = {
         recursive = true;
-        source = dotfolder + /.local/bin;
+        source = home + /.local/bin;
         target = "./.local/bin";
         executable = true;
       };
