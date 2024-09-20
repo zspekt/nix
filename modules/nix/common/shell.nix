@@ -53,7 +53,7 @@
     tmux
     tmuxinator
     unstable.tmuxp
-    # unstable.sesh
+    unstable.sesh # not missing out on anything by using this instead of  github@latest
 
     # finding stuff
     fzf
