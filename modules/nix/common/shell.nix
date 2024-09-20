@@ -52,7 +52,8 @@
     # tmux
     tmux
     tmuxinator
-    unstable.sesh
+    unstable.tmuxp
+    # unstable.sesh
 
     # finding stuff
     fzf

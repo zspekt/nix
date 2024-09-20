@@ -1,0 +1,19 @@
+import = [] # you can import other files
+
+[default_session]
+startup_command = "nvim -c ':Telescope git_files'"
+
+# [[session]]
+# name = "tcpLogger"
+# path = "~/coding/go/tcpLogger"
+# # tmuxinator = "~/.config/tmuxinator/tcpLogger.yml" doesn't actually work yet?
+# startup_command = ""
+# tmuxp = "./loltest.yaml"
+
+
+[[session]]
+name = "TESTINGTMUXP"
+path = "~/coding/go/tcpLogger"
+# tmuxinator = "~/.config/tmuxinator/tcpLogger.yml" doesn't actually work yet?
+# startup_command = "~/.config/sesh/scripts/tcpLogger.sh"
+startup_script =  "~/.config/sesh/scripts/tcpLogger.sh"

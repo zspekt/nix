@@ -32,6 +32,8 @@ export WLR_NO_HARDWARE_CURSORS=1
 # # Without this IDEA won't work
 export _JAVA_AWT_WM_NONREPARENTING=1
 
+export FZF_DEFAULT_OPTS="--color=fg+:#fc9c3a,current-bg:-1,border:#fc9c3a,pointer:#f6758d,marker:#f6758d,separator:#807e71,prompt:#7eb041 --pointer=' ' --marker=' ' --prompt=' '"
+
 ################################################################################
 # SSH and GPG ##################################################################
 ################################################################################
@@ -150,7 +152,7 @@ lfcd () {
     fi
 }
 
-bindkey -s '^o' 'lfcd\n'
+bindkey -s '^o' 'yazi\n'
 
 setopt HIST_IGNORE_ALL_DUPS
 
@@ -183,6 +185,22 @@ export PATH=$PATH:/home/zspekt/go/bin
 ################################################################################
 # more bloated theme stuff #####################################################
 ################################################################################
+
+function sesh-sessions() {
+  {
+    exec </dev/tty
+    exec <&1
+    local session
+    session=$(sesh list -t -c | fzf --height 40% --reverse --border-label ' sesh ' --border --prompt '⚡  ')
+    [[ -z "$session" ]] && return
+    sesh connect "$session"
+  }
+}
+
+zle     -N             sesh-sessions
+# bindkey -M emacs '\es' sesh-sessions
+bindkey -M vicmd '\es' sesh-sessions
+bindkey -M viins '\es' sesh-sessions
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
