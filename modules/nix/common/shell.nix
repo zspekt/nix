@@ -1,4 +1,9 @@
-{ inputs, pkgs, ... }:
+{
+  inputs,
+  unstable,
+  pkgs,
+  ...
+}:
 {
 
   programs = {
@@ -36,17 +41,24 @@
     pass-wayland
     wget
     curl
+    coreutils
+    antidote # zsh plugin manager
+    bat # better cat
+    unzip
+
+    jq
+    jqp
+
+    # tmux
     tmux
     tmuxinator
-    coreutils
-    antidote
-    bat
-    unzip
+    unstable.sesh
 
     # finding stuff
     fzf
     ripgrep
     fd
+    gum
 
     # monitoring
     btop
@@ -65,6 +77,8 @@
 
     # msging
     tg
+
+    yazi
 
     # misc
     qmk # corne

@@ -72,6 +72,18 @@
         target = ".tmux/plugins/tpm";
       };
 
+      tmuxSesh = {
+        recursive = true;
+        source = config + /sesh;
+        target = "./.config/sesh";
+      };
+
+      tmuxinator = {
+        recursive = true;
+        source = config + /tmuxinator;
+        target = "./.config/tmuxinator";
+      };
+
       scripts = {
         recursive = true;
         source = dotfolder + /.local/bin;
