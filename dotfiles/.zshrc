@@ -191,7 +191,7 @@ function sesh-sessions() {
     exec </dev/tty
     exec <&1
     local session
-    session=$(sesh list -t -c | fzf --height 40% --reverse --border-label ' sesh ' --border --prompt '⚡  ')
+    session=$(sesh list -it -ic | fzf --color=fg+:#fc9c3a,current-bg:-1,border:#fc9c3a,pointer:#f6758d,marker:#f6758d,prompt:#7eb041,label:#fc9c3a --ansi --height 40% --reverse --border-label ' sesh ' --border --prompt '⚡  ')
     [[ -z "$session" ]] && return
     sesh connect "$session"
   }

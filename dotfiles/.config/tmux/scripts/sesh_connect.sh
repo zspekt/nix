@@ -11,8 +11,11 @@ pick=$(
 		--bind 'ctrl-t:change-prompt(  )+reload(sesh list -it)' \
 		--bind 'ctrl-g:change-prompt(  )+reload(sesh list -ic)' \
 		--bind 'ctrl-x:change-prompt(  )+reload(sesh list -iz)' \
-		--bind 'ctrl-f:change-prompt(  )+reload(fd -H -d 2 -t d -E .Trash . ~)' \
-		--bind 'ctrl-d:execute(tmux kill-session -t $(echo {} | awk "{ print \$2 }"))+change-prompt(⚡  )+reload(sesh list -i)'
+		--bind 'ctrl-f:change-prompt(  )+reload(fd -H -d 2 -t d -E .Trash . ~)'
 )
+
+if [[ -z "$pick" ]]; then
+	exit
+fi
 
 exec sesh connect "$pick"
