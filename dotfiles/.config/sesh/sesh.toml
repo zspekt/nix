@@ -14,13 +14,15 @@ startup_command = "nvim -c ':lua require(\"telescope.builtin\").find_files({ hid
 [[session]]
 name = "tcpLogger"
 path = "~/coding/go/tcpLogger"
-startup_script =  "~/.config/sesh/scripts/splitTelescope.sh"
+startup_command =  "~/.config/sesh/scripts/splitTelescope.sh"
 
 
 [[session]]
 name = "tcpHelper"
 path = "~/coding/go/tcpLogger"
-startup_script =  "~/.config/sesh/scripts/splitTelescope.sh"
+startup_command =  "~/.config/sesh/scripts/sshNixpiOpen.sh"
+# startup_script =  "~/.config/sesh/scripts/sshNixpiOpen.sh"
+# apparently startup_script doesn't work? (maybe hasn't been implemented yet)
 
 
 [[session]]
