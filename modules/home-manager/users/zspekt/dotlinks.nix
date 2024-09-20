@@ -61,9 +61,9 @@
       };
 
       tmux = {
-        recursive = false;
-        source = config + /tmux/tmux.conf;
-        target = ".config/tmux/tmux.conf";
+        recursive = true;
+        source = config + /tmux;
+        target = ".config/tmux";
       };
 
       tmuxTpm = {

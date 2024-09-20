@@ -12,8 +12,34 @@ startup_command = "nvim -c ':Telescope git_files'"
 
 
 [[session]]
-name = "TESTINGTMUXP"
+name = "tcpLogger"
 path = "~/coding/go/tcpLogger"
-# tmuxinator = "~/.config/tmuxinator/tcpLogger.yml" doesn't actually work yet?
-# startup_command = "~/.config/sesh/scripts/tcpLogger.sh"
-startup_script =  "~/.config/sesh/scripts/tcpLogger.sh"
+startup_script =  "~/.config/sesh/scripts/splitTelescope.sh"
+
+
+[[session]]
+name = "tcpHelper"
+path = "~/coding/go/tcpLogger"
+startup_script =  "~/.config/sesh/scripts/splitTelescope.sh"
+
+
+[[session]]
+name = "nix"
+path = "~/nix"
+startup_script =  "~/.config/sesh/scripts/splitTelescope.sh"
+
+[[session]]
+name = "nvim"
+path = "~/nix/dotfiles/.config/nvim"
+startup_script =  "~/.config/sesh/scripts/splitTelescope.sh"
+
+
+[[session]]
+name = "tmux"
+path = "~/nix/dotfiles/.config/tmux"
+startup_script =  "~/.config/sesh/scripts/splitTelescope.sh"
+
+[[session]]
+name = "sesh"
+path = "~/nix/dotfiles/.config/sesh/"
+startup_script =  "~/.config/sesh/scripts/splitTelescope.sh"
