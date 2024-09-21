@@ -52,8 +52,7 @@
     # tmux
     tmux
     tmuxinator
-    unstable.tmuxp
-    unstable.sesh # not missing out on anything by using this instead of  github@latest
+    # unstable.sesh the version on nixpkgs only lists zoxide entries unless u pass the corresponding flags
 
     # finding stuff
     fzf
