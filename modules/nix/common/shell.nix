@@ -42,11 +42,13 @@
     wget
     curl
     coreutils
+    gnumake
     antidote # zsh plugin manager
     bat # better cat
     unzip
 
     jq
+    yq # like jq but for yaml, json, and xml
     jqp
 
     # tmux

@@ -32,8 +32,6 @@ export WLR_NO_HARDWARE_CURSORS=1
 # # Without this IDEA won't work
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-export FZF_DEFAULT_OPTS="--color=fg+:#fc9c3a,current-bg:-1,border:#fc9c3a,pointer:#f6758d,marker:#f6758d,separator:#807e71,prompt:#7eb041 --pointer=' ' --marker=' ' --prompt=' '"
-
 ################################################################################
 # SSH and GPG ##################################################################
 ################################################################################
@@ -105,11 +103,6 @@ alias gor="go run"
 alias gipv6="ifconfig |  grep -o 'inet6 [^fde:].*global>' | awk '{print \$2}'"
 alias int="ping -c 3 ping.archlinux.org"
 
-# zstyle ':omz:plugins:alias-finder' autoload yes # disabled by default
-# zstyle ':omz:plugins:alias-finder' longer yes # disabled by default
-# zstyle ':omz:plugins:alias-finder' exact yes # disabled by default
-# zstyle ':omz:plugins:alias-finder' cheaper yes # disabled by default
-
 ################################################################################
 # plugins ######################################################################
 ################################################################################
@@ -141,49 +134,57 @@ zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
-# Use lf to switch directories and bind it to ctrl-o
-lfcd () {
-    tmp="$(mktemp)"
-    lf -last-dir-path="$tmp" "$@"
-    if [ -f "$tmp" ]; then
-        dir="$(cat "$tmp")"
-        rm -f "$tmp"
-        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
-    fi
-}
-
-bindkey -s '^o' 'yazi\n'
-
 setopt HIST_IGNORE_ALL_DUPS
 
 # bindings for history-substring-search-up
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
-# autoload -Uz compinit && compinit
-# zstyle ':completion:*' menu select
-# zmodload zsh/complist
-# compinit
-# _comp_options+=(globdots)               # Include hidden files.
-# use the vi navigation keys in menu completion
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
+
+# yazi or lfcd
+
+if hash yazi 2>/dev/null; then
+  bindkey -s '^o' 'yazi\n'
+else
+  # Use lf to switch directories and bind it to ctrl-o
+  lfcd () {
+      tmp="$(mktemp)"
+      lf -last-dir-path="$tmp" "$@"
+      if [ -f "$tmp" ]; then
+          dir="$(cat "$tmp")"
+          rm -f "$tmp"
+          [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
+      fi
+  }
+  bindkey -s '^o' 'lfcd\n'
+fi
+
 
 
 ################################################################################
 # paths ########################################################################
 ################################################################################
 
+GOPATH=$HOME/go
+
 export PATH=$PATH:/home/zspekt/.local/bin
 
-export PATH=$PATH:/home/zspekt/go
+export PATH=$PATH:$GOPATH
 
-export PATH=$PATH:/home/zspekt/go/bin
+export PATH=$PATH:$GOPATH/bin
 
 ################################################################################
-# more bloated theme stuff #####################################################
+#### go ########################################################################
+################################################################################
+export GOPATH
+
+
+################################################################################
+#### sesh ######################################################################
 ################################################################################
 
 function sesh-sessions() {
@@ -202,7 +203,19 @@ zle     -N             sesh-sessions
 bindkey -M vicmd '\es' sesh-sessions
 bindkey -M viins '\es' sesh-sessions
 
+export FZF_DEFAULT_OPTS="--color=fg+:#fc9c3a,current-bg:-1,border:#fc9c3a,pointer:#f6758d,marker:#f6758d,separator:#807e71,prompt:#7eb041 --pointer=' ' --marker=' ' --prompt=' '"
+
+
+################################################################################
+#### more p10k #################################################################
+################################################################################
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
+################################################################################
+#### zoxide ####################################################################
+################################################################################
 
 eval "$(zoxide init --cmd cd zsh)"
