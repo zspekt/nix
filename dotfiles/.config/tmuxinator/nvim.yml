@@ -1,7 +1,7 @@
-# /home/zspekt/.config/tmuxinator/tcpLogger.yml
+# /home/zspekt/.config/tmuxinator/nvim.yml
 
-name: tcpLogger
-root: ~/coding/go/tcpLogger
+name: nvim
+root: ~/nix/dotfiles/.config/nvim
 
 # Optional tmux socket
 # socket_name: foo
@@ -12,7 +12,7 @@ root: ~/coding/go/tcpLogger
 # Project hooks
 
 # Runs on project start, always
-# on_project_start: git fetch
+# on_project_start: command
 
 # Run on project start, the first time
 # on_project_first_start: command
@@ -53,9 +53,4 @@ windows:
       panes:
         - nvim -c ':lua require("telescope.builtin").find_files({ hidden = true, no_ignore = true, })'
         -
-  - ssh:
-      layout: even-horizontal
-      panes:
-        - ssh zspekt@nixpi.lan
-        - ssh root@openwrt.lan
   - shell:

@@ -4,44 +4,6 @@ import = [] # you can import other files
 startup_command = "nvim -c ':lua require(\"telescope.builtin\").find_files({ hidden = true, no_ignore = true, })'"
 
 # [[session]]
-# name = "tcpLogger"
-# path = "~/coding/go/tcpLogger"
-# # tmuxinator = "~/.config/tmuxinator/tcpLogger.yml" doesn't actually work yet?
-# startup_command = ""
-# tmuxp = "./loltest.yaml"
-
-
-[[session]]
-name = "tcpLogger"
-path = "~/coding/go/tcpLogger"
-startup_command =  "~/.config/sesh/scripts/splitTelescope.sh"
-
-
-[[session]]
-name = "tcpHelper"
-path = "~/coding/go/tcpLogger"
-startup_command =  "~/.config/sesh/scripts/sshNixpiOpen.sh"
-# startup_script =  "~/.config/sesh/scripts/sshNixpiOpen.sh"
-# apparently startup_script doesn't work? (maybe hasn't been implemented yet)
-
-
-[[session]]
-name = "nix"
-path = "~/nix"
-startup_script =  "~/.config/sesh/scripts/splitTelescope.sh"
-
-[[session]]
-name = "nvim"
-path = "~/nix/dotfiles/.config/nvim"
-startup_script =  "~/.config/sesh/scripts/splitTelescope.sh"
-
-
-[[session]]
-name = "tmux"
-path = "~/nix/dotfiles/.config/tmux"
-startup_script =  "~/.config/sesh/scripts/splitTelescope.sh"
-
-[[session]]
-name = "sesh"
-path = "~/nix/dotfiles/.config/sesh/"
-startup_script =  "~/.config/sesh/scripts/splitTelescope.sh"
+# name = "nix"
+# path = "~/nix"
+# startup_script =  "~/.config/sesh/scripts/splitTelescope.sh"
