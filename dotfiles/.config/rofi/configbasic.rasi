@@ -12,7 +12,7 @@ configuration {
 
 window {
     transparency:                   "real";
-    background-color:               @al;
+    background-color:               #00000060;
     text-color: 					          @fg;
     border:			                    10px;
     border-color:		                #00000000;
@@ -21,7 +21,7 @@ window {
 }
 
 prompt {
-    enabled: 						            false;
+  enabled: 						              true;
 	padding: 						              0px 0px 0px 2px;
 	background-color: 				        #00000000;
 	text-color: 					            @fg;

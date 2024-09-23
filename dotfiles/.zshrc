@@ -54,7 +54,9 @@ fi
 # interactive cd on tab with fzf
 # source /home/zspekt/.cache/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-ohmyzsh-SLASH-ohmyzsh/plugins/zsh-interactive-cd/zsh-interactive-cd.plugin.zsh
 
-export ZSH_CACHE_DIR=$HOME/.cache/zsh
+export XDG_CACHE_HOME=$HOME/.cache
+
+export ZSH_CACHE_DIR=$XDG_CACHE_HOME/zsh
 
 # History in cache directory:
 setopt SHARE_HISTORY
@@ -181,7 +183,6 @@ export PATH=$PATH:$GOPATH/bin
 #### go ########################################################################
 ################################################################################
 export GOPATH
-
 
 ################################################################################
 #### sesh ######################################################################
