@@ -80,7 +80,7 @@
 
     wl-clipboard
     clipman
-    cliphist
+    # cliphist
 
     xdg-utils
   ];
