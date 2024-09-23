@@ -11,6 +11,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    custom-sesh.url = "github:zspekt/sesh.nix";
+
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 

@@ -54,7 +54,7 @@
     # tmux
     tmux
     tmuxinator
-    # unstable.sesh the version on nixpkgs only lists zoxide entries unless u pass the corresponding flags
+    inputs.custom-sesh.defaultPackage.x86_64-linux
 
     # finding stuff
     fzf
