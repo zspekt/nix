@@ -50,6 +50,15 @@
     ];
   };
 
+  fileSystems."/ram" = {
+    device = "none";
+    fsType = "tmpfs";
+    options = [
+      "size=1G"
+      # "mode=770"
+    ];
+  };
+
   fileSystems."/home" = {
     device = "/dev/disk/by-uuid/084a6c3f-073b-42c7-9015-302c48c1adf7";
     fsType = "ext4";
