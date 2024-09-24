@@ -269,22 +269,6 @@
         "type": "github"
       }
     },
-    "nixpkgs_5": {
-      "locked": {
-        "lastModified": 1726937504,
-        "narHash": "sha256-bvGoiQBvponpZh8ClUcmJ6QnsNKw0EMrCQJARK3bI1c=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "9357f4f23713673f310988025d9dc261c20e70c6",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
@@ -292,7 +276,6 @@
         "nixpkgs": "nixpkgs_2",
         "sesh-latest": "sesh-latest",
         "tmux-latest": "tmux-latest",
-        "tmuxinator-flake": "tmuxinator-flake",
         "unstable": "unstable"
       }
     },
@@ -329,24 +312,6 @@
       "original": {
         "owner": "zspekt",
         "repo": "tmux-latest.nix",
-        "type": "github"
-      }
-    },
-    "tmuxinator-flake": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_5"
-      },
-      "locked": {
-        "lastModified": 1727185006,
-        "narHash": "sha256-O6R3oNjetCphW9faCYn7UcqaRO+rPR25xsiSLKdUQj0=",
-        "owner": "zspekt",
-        "repo": "tmuxinator-flake.nix",
-        "rev": "b04ad32c152ad66bb4c5e21b7b5393a8ae4e13d4",
-        "type": "github"
-      },
-      "original": {
-        "owner": "zspekt",
-        "repo": "tmuxinator-flake.nix",
         "type": "github"
       }
     },

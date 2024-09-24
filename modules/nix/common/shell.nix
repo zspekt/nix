@@ -53,8 +53,8 @@
 
     # tmux
     inputs.tmux-latest.defaultPackage.x86_64-linux # master
-    inputs.tmuxinator-flake.defaultPackage.x86_64-linux # 3.3.0 because idk how to deal with ruby versions
     inputs.sesh-latest.defaultPackage.x86_64-linux # master
+    tmuxinator
     thumbs
 
     # finding stuff
