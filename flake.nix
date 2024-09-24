@@ -12,6 +12,7 @@
     };
 
     sesh-latest.url = "github:zspekt/sesh.nix";
+    # sesh-latest.url = "git+file:///home/zspekt/coding/nix/pkgs/sesh.nix";
 
     tmux-latest.url = "github:zspekt/tmux-latest.nix";
 

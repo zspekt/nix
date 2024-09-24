@@ -1,6 +1,6 @@
 # /home/zspekt/.config/tmuxinator/sshnixth.yml
 
-name: sshnixth.yml
+name: sshnixth
 root: ~/
 
 # Optional tmux socket

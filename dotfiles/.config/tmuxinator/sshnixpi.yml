@@ -1,6 +1,6 @@
 # /home/zspekt/.config/tmuxinator/sshnixpi.yml
 
-name: sshnixpi.yml
+name: sshnixpi
 root: ~/
 
 # Optional tmux socket
