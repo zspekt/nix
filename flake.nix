@@ -11,7 +11,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    custom-sesh.url = "github:zspekt/sesh.nix";
+    sesh-latest.url = "github:zspekt/sesh.nix";
+
+    tmux-latest.url = "github:zspekt/tmux-latest.nix";
 
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };

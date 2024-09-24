@@ -52,9 +52,9 @@
     jqp
 
     # tmux
-    tmux
+    inputs.tmux-latest.defaultPackage.x86_64-linux
     tmuxinator
-    inputs.custom-sesh.defaultPackage.x86_64-linux
+    inputs.sesh-latest.defaultPackage.x86_64-linux
 
     # finding stuff
     fzf
