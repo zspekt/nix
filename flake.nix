@@ -15,6 +15,9 @@
 
     tmux-latest.url = "github:zspekt/tmux-latest.nix";
 
+    tmuxinator-flake.url = "github:zspekt/tmuxinator-flake.nix";
+    # tmuxinator-flake.url = "git+file:///home/zspekt/coding/nix/pkgs/tmuxinator-latest.nix";
+
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
