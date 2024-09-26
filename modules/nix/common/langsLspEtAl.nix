@@ -20,6 +20,7 @@
 
     # Dockerfile
     hadolint
+    dockerfile-language-server-nodejs
 
     # lua
     stylua
