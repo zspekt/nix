@@ -65,6 +65,7 @@
         ];
         specialArgs = {
           inherit inputs;
+          inherit system;
           hostname = "nixth";
           unstable = import inputs.unstable {
             inherit system;
@@ -90,6 +91,7 @@
         ];
         specialArgs = {
           inherit inputs;
+          system = "aarch64-linux";
           hostname = "nixpi";
           unstable = import inputs.unstable {
             system = "aarch64-linux";

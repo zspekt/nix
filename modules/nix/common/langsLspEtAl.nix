@@ -18,6 +18,9 @@
     unstable.delve
     # unstable.gdlv GUI frontend for delve
 
+    # Dockerfile
+    hadolint
+
     # lua
     stylua
     lua54Packages.luacheck
