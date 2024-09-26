@@ -36,6 +36,7 @@
         ];
         specialArgs = {
           inherit inputs;
+          inherit system;
           hostname = "nixos";
           unstable = import inputs.unstable {
             inherit system;

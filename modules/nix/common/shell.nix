@@ -2,6 +2,7 @@
   inputs,
   unstable,
   pkgs,
+  system,
   ...
 }:
 {
@@ -52,8 +53,8 @@
     jqp
 
     # tmux
-    inputs.tmux-latest.defaultPackage.x86_64-linux # master
-    inputs.sesh-latest.defaultPackage.x86_64-linux # master
+    inputs.tmux-latest.defaultPackage.${system} # master
+    inputs.sesh-latest.defaultPackage.${system} # master
     tmuxinator
     thumbs
 

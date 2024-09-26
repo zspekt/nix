@@ -1,6 +1,6 @@
 # /home/zspekt/.config/tmuxinator/sshopenwrt.yml
 
-name: sshopenwrt.yml
+name: sshopenwrt
 root: ~/
 
 # Optional tmux socket
