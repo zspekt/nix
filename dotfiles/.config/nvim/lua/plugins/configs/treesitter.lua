@@ -57,4 +57,7 @@ return {
     enable = true,
     use_languagetree = true,
   },
+  matchup = {
+    enable = true,
+  }
 }
