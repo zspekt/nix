@@ -17,9 +17,6 @@ set("n", "<leader>bd", "<cmd> bd <CR>", { desc = "Close buffer" })
 set("n", "<leader>bD", "<cmd> bd! <CR>", { desc = "Close buffer with unsaved changes" })
 
 -- tabs
-set("n", "<Tab>", "<cmd> tabnext <CR>", { desc = "Next tab" })
-set("n", "<S-Tab>", "<cmd> tabprevious <CR>", { desc = "Previous tab" })
-
 set("n", "<S-right>", "<cmd> tabnext <CR>", { desc = "Next tab" })
 set("n", "<S-left>", "<cmd> tabprevious <CR>", { desc = "Previous tab" })
 set("n", "<leader>tn", "<cmd> tabnew <CR>", { desc = "New tab" })
@@ -34,6 +31,9 @@ set("n", "<M-,>", "<c-w>5<")
 set("n", "<M-.>", "<c-w>5>")
 set("n", "<M-u>", "<c-w>-")
 set("n", "<M-d>", "<c-w>+")
+
+-- jumping forward (opposite of C-o)
+set('n', '<Tab>', '<C-i>')
 
 -- https://www.reddit.com/r/neovim/comments/vlc9sc/how_to_define_a_user_command_to_partially_stage
 local function gitsigns_visual_op(op)
