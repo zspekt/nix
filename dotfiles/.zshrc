@@ -1,6 +1,9 @@
 ################################################################################
-# bloated theme ################################################################
+#### bloated theme #############################################################
 ################################################################################
+
+# to measure startup times
+# zmodload zsh/zprof
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -9,11 +12,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# to measure startup times
-# zmodload zsh/zprof
-
 ################################################################################
-# wayland stuff ################################################################
+#### wayland stuff #############################################################
 ################################################################################
 
 # export WLR_EGL_NO_MODIFIERS=1
@@ -24,16 +24,16 @@ fi
 # export XDG_SESSION_TYPE=wayland
 # export XDG_SESSION_DESKTOP=Hyprland
 # tell firefox to run natively in wayland
-MOZ_ENABLE_WAYLAND=1
+export MOZ_ENABLE_WAYLAND=1
 
 # without this u have no cursor on hyprland
 export WLR_NO_HARDWARE_CURSORS=1
 
-# # Without this IDEA won't work
+# Without this IDEA won't work
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 ################################################################################
-# SSH and GPG ##################################################################
+#### SSH and GPG ###############################################################
 ################################################################################
 
 # Preferred editor for local and remote sessions
@@ -48,7 +48,7 @@ fi
 
 
 ################################################################################
-# misc #########################################################################
+#### misc ######################################################################
 ################################################################################
 
 # interactive cd on tab with fzf
@@ -71,10 +71,24 @@ setopt HIST_FIND_NO_DUPS
 
 
 ################################################################################
-# aliases ######################################################################
+#### plugins ###################################################################
+################################################################################
+
+# antidote
+source ~/.zsh/zsh_plugins.zsh
+
+
+################################################################################
+#### aliases ###################################################################
 ################################################################################
 
 # alias cat=bat
+
+alias ls='ls -l'
+
+if type eza >/dev/null; then
+  alias ls="eza"
+fi
 
 alias d=docker
 alias dc=docker-compose
@@ -82,6 +96,7 @@ alias dc=docker-compose
 alias kc=kubectl
 
 alias lzd=lazydocker
+alias lzg=lazygit
 
 alias startx="Hyprland"
 
@@ -96,7 +111,6 @@ alias rwb="killall waybar; waybar & disown"
 alias p=passmenu
 # alias vim=nvim
 # alias vi=nvim
-alias ls='ls -l'
 alias nvlog="journalctl | nvim"
 
 alias gmi="go mod init"
@@ -106,11 +120,8 @@ alias gipv6="ifconfig |  grep -o 'inet6 [^fde:].*global>' | awk '{print \$2}'"
 alias int="ping -c 3 ping.archlinux.org"
 
 ################################################################################
-# plugins ######################################################################
+#### vim keys ##################################################################
 ################################################################################
-
-# antidote
-source ~/.zsh/zsh_plugins.zsh
 
 bindkey -v
 export KEYTIMEOUT=1
@@ -149,7 +160,7 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 
 # yazi or lfcd
 
-if hash yazi 2>/dev/null; then
+if type yazi >/dev/null; then
   bindkey -s '^o' 'yazi\n'
 else
   # Use lf to switch directories and bind it to ctrl-o
@@ -168,7 +179,7 @@ fi
 
 
 ################################################################################
-# paths ########################################################################
+#### paths #####################################################################
 ################################################################################
 
 GOPATH=$HOME/go
@@ -220,3 +231,6 @@ export FZF_DEFAULT_OPTS="--color=fg+:#fc9c3a,current-bg:-1,border:#fc9c3a,pointe
 ################################################################################
 
 eval "$(zoxide init --cmd cd zsh)"
+
+# uncomment this and the line at the top to profile
+# zprof

@@ -36,13 +36,16 @@
     lazygit
 
     # cli utilities
+    eza # better ls
     calc
     tldr
     zoxide
-    pass-wayland
+    (pass-wayland.withExtensions (exts: [ exts.pass-otp ]))
+    zbar # for qr codes
     wget
     curl
     coreutils
+    file
     gnumake
     antidote # zsh plugin manager
     bat # better cat

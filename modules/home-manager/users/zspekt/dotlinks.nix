@@ -11,7 +11,6 @@
         ./dotlinks/rofi.nix
         ./dotlinks/mako.nix
       ]
-
     else if "${hostname}" == "nixth" then
       [
         ./dotlinks/hyprThpad.nix
