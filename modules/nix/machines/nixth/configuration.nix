@@ -19,6 +19,7 @@
     ../../common/sound.nix
     ../../common/ydotool.nix
     ../../common/user.nix
+    ../../common/bluetooth.nix
   ];
 
   # Set your time zone.
