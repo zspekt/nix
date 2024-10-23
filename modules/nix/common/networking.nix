@@ -24,6 +24,7 @@
     traceroute
     netcat
     nmap
+    iptables
   ];
 
   users.users.zspekt = {

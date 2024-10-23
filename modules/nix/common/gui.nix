@@ -1,4 +1,9 @@
-{ pkgs, unstable, ... }:
+{
+  inputs,
+  pkgs,
+  unstable,
+  ...
+}:
 
 {
   programs.hyprland.enable = true;
@@ -17,10 +22,10 @@
     swaylock
 
     # term
-    kitty
+    inputs.kitty-latest.defaultPackage.${pkgs.system}
 
     # browser
-    firefox
+    unstable.firefox
 
     # notif
     mako
@@ -76,6 +81,7 @@
 
     # misc
     wev
+    showmethekey
     steam
 
     wl-clipboard

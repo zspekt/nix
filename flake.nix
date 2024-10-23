@@ -17,6 +17,8 @@
     tmux-latest.url = "github:zspekt/tmux-latest.nix";
 
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+
+    kitty-latest.url = "github:zspekt/kitty.nix";
   };
 
   outputs =

@@ -16,7 +16,10 @@
       #   setSocketVariable = true;
       # };
 
-      daemon.settings.data-root = "/home/zspekt/.dockerDaemonRoot/";
+      daemon.settings = {
+        ip = "127.0.0.1";
+        data-root = "/home/zspekt/.dockerDaemonRoot/";
+      };
     };
 
     containers = {
