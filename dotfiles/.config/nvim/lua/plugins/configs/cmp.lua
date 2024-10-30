@@ -8,10 +8,10 @@ lspkind.init {}
 local options = {
   sources = {
     { name = "nvim_lsp" },
-    { name = "luasnip" },
-    { name = "buffer" },
     { name = "nvim_lua" },
+    { name = "buffer",  max_item_count = 3 },
     { name = "path" },
+    { name = "luasnip" },
   },
 
   completion = {
@@ -42,18 +42,8 @@ local options = {
   },
 }
 
-vim.keymap.set({ "i", "s" }, "<C-S-K>", function()
-  if ls.expand_or_jumpable() then
-    ls.expand_or_jump()
-  end
-end, { silent = true }
-)
 
-vim.keymap.set({ "i", "s" }, "<C-S-J>", function()
-  if ls.jumpable(-1) then
-    ls.jump(-1)
-  end
-end, { silent = true }
-)
+vim.keymap.set({ "i", "s" }, "<M-C-L>", function() ls.jump(1) end, { desc = "Snippet jump forward", silent = true })
+vim.keymap.set({ "i", "s" }, "<M-C-H>", function() ls.jump(-1) end, { desc = "Snippet jump backward", silent = true })
 
 return options

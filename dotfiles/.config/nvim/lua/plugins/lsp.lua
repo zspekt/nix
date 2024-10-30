@@ -39,6 +39,7 @@ vim.keymap.set('n', '<leader>fm', '<cmd>lua vim.lsp.buf.format({ async = true })
 -- Define capabilities with cmp_nvim_lsp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- Plugin configuration
 return {
@@ -165,6 +166,13 @@ return {
         capabilities = capabilities,
         handlers = handlers,
       }
+
+      -- HTMX setup
+      lspconfig.htmx.setup {
+        capabilities = capabilities,
+        handlers = handlers,
+      }
+
 
       -- CSS Language Server setup
       lspconfig.cssls.setup {

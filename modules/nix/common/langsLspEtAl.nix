@@ -15,6 +15,7 @@
     unstable.goimports-reviser
     unstable.golines
     unstable.gotools
+    unstable.gotests
     unstable.delve
     # unstable.gdlv GUI frontend for delve
 
@@ -52,6 +53,11 @@
     shellcheck
     shellharden
     unstable.bash-language-server
+
+    # html/x
+    html-tidy
+    htmx-lsp
+    vscode-langservers-extracted # for html lsp
 
     # sql
     sqlfluff

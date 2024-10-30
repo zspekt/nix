@@ -21,7 +21,7 @@ vim.opt.numberwidth = 4
 vim.opt.ruler = true
 
 vim.opt.scrolloff = 10
-vim.opt.sidescrolloff = 30
+vim.opt.sidescrolloff = 20
 vim.opt.wrap = false
 vim.opt.colorcolumn = "80"
 
