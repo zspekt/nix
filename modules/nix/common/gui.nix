@@ -70,7 +70,7 @@
     obsidian
 
     # torrent
-    qbittorrent
+    unstable.qbittorrent # stable has an RCE
 
     # archives
     unrar

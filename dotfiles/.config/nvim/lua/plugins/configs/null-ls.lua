@@ -21,6 +21,11 @@ local opts = {
     -- dockerfile (not compose)
     null_ls.builtins.diagnostics.hadolint,
 
+    -- html
+    null_ls.builtins.diagnostics.tidy.with {
+      filetypes = { "html"},
+    },
+
     -- misc
     null_ls.builtins.formatting.prettier.with {
       filetypes = { "html", "json", "yaml", "markdown", "css" },
