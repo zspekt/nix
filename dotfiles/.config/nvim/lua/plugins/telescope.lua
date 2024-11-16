@@ -30,6 +30,13 @@ return {
         desc = "Find functions"
       },
       {
+        "<leader>fy",
+        function()
+          require('telescope.builtin').lsp_document_symbols()
+        end,
+        desc = "Find symbols"
+      },
+      {
         "<leader>fa",
         function()
           require('telescope.builtin').find_files({ hidden = true, no_ignore = true, })
