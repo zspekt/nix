@@ -7,6 +7,11 @@ return {
     ---@module "ibl"
     ---@type ibl.config
     opts = {
+      exclude = {
+        filetypes = {
+          "markdown",
+        },
+      },
       indent = {
         char = { "│" },
         tab_char = { "│" },
