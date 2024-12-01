@@ -1,9 +1,4 @@
-{
-  inputs,
-  pkgs,
-  unstable,
-  ...
-}:
+{ pkgs, unstable, ... }:
 
 {
   programs.hyprland.enable = true;
@@ -21,8 +16,7 @@
     hyprpaper
     swaylock
 
-    # term
-    inputs.kitty-latest.defaultPackage.${pkgs.system}
+    unstable.kitty
 
     # browser
     unstable.firefox
