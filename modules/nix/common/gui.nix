@@ -63,6 +63,9 @@
     # notes
     obsidian
 
+    scrcpy # share android screen
+    android-tools
+
     # torrent
     unstable.qbittorrent # stable has an RCE
 
