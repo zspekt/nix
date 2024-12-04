@@ -16,7 +16,7 @@ password_files=("$prefix"/**/*.gpg)
 password_files=("${password_files[@]#"$prefix"/}")
 password_files=("${password_files[@]%.gpg}")
 
-password=$(printf '%s\n' "${password_files[@]}" | rofi -config /home/zspekt/.config/rofi/configbasic.rasi -dmenu "$@" -p "$prompt")
+password=$(printf '%s\n' "${password_files[@]}" | rofi -dmenu "$@" -p "$prompt")
 
 [[ -n $password ]] || exit
 
