@@ -20,11 +20,21 @@ vim.opt.relativenumber = true
 vim.opt.numberwidth = 4
 vim.opt.ruler = true
 
+-- beam-shaped cursor when in cmd mode otherwise is a block that is way too
+-- thick for kitty's cursor trail
+
+vim.opt.guicursor="n-v-sm:block,i-ci-c-ve:ver25,r-cr-o:hor200"
+
+-- scrolloff
 vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 20
+
+-- linewrap
 vim.opt.wrap = false
+
 vim.opt.colorcolumn = "80"
 
+-- conceal level (only relevant to me bc of markview)
 vim.opt.conceallevel = 1
 
 -- Enable mouse mode
