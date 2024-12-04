@@ -9,6 +9,7 @@
 
     # wm
     hyprland
+    hdrop
 
     # wm stuff
     rofi-wayland
