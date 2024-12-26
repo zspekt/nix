@@ -31,61 +31,61 @@
 
   home.file =
     let
-      home = ../../../../dotfiles;
-      config = home + /.config;
+      homeDir = ../../../../dotfiles;
+      configDir = homeDir + /.config;
     in
     {
       neovim = {
         recursive = true;
-        source = config + /nvim;
+        source = configDir + /nvim;
         target = "./.config/nvim";
       };
 
       zshPluginList = {
         recursive = false;
-        source = home + /.zsh/zsh_plugins.txt;
+        source = homeDir + /.zsh/zsh_plugins.txt;
         target = "./.zsh/zsh_plugins.txt";
       };
 
       zshrc = {
         recursive = false;
-        source = home + /.zshrc;
+        source = homeDir + /.zshrc;
         target = "./.zshrc";
       };
 
       p10k = {
         recursive = false;
-        source = home + /.p10k.zsh;
+        source = homeDir + /.p10k.zsh;
         target = "./.p10k.zsh";
       };
 
       tmux = {
         recursive = true;
-        source = config + /tmux;
+        source = configDir + /tmux;
         target = ".config/tmux";
       };
 
       tmuxTpm = {
         recursive = true;
-        source = home + /.tmux/plugins/tpm;
+        source = homeDir + /.tmux/plugins/tpm;
         target = ".tmux/plugins/tpm";
       };
 
       tmuxSesh = {
         recursive = true;
-        source = config + /sesh;
+        source = configDir + /sesh;
         target = "./.config/sesh";
       };
 
       tmuxinator = {
         recursive = true;
-        source = config + /tmuxinator;
+        source = configDir + /tmuxinator;
         target = "./.config/tmuxinator";
       };
 
       scripts = {
         recursive = true;
-        source = home + /.local/bin;
+        source = homeDir + /.local/bin;
         target = "./.local/bin";
         executable = true;
       };

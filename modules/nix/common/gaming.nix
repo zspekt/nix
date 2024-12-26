@@ -1,28 +1,26 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
-
-  # Environment Packages
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.nvidia.acceptLicense = true;
-  programs.nix-ld.enable = true;
-
   # xdg.portal.wlr.enable = true;
   services.dbus.enable = true; # TODO: move this somewhere else. check line above
 
   # System packages
   environment.systemPackages = with pkgs; [
-    wineWowPackages.waylandFull
     lutris
     mangohud
-    winetricks
-    vulkan-loader
-    vulkan-tools
-    nv-codec-headers-12
+    # winetricks
+    # vulkan-loader
+    # vulkan-tools
+    # nv-codec-headers-12
+    protonup
   ];
 
-  programs.coolercontrol = {
-    enable = true;
-    nvidiaSupport = true;
+  environment.sessionVariables = {
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/zspekt/.steam/root/compatiblitytools.d";
+  };
+
+  fileSystems."/home/zspekt/games" = {
+    device = "/dev/disk/by-uuid/d850f08d-8bea-4129-8e84-d6ffddea6b61";
+    fsType = "ext4";
   };
 
   programs.gamemode.enable = true;
@@ -30,25 +28,4 @@
     enable = true;
     gamescopeSession.enable = true;
   };
-
-  hardware = {
-    amdgpu.opencl.enable = true; # FIX: do i need this?
-    enableRedistributableFirmware = true;
-
-    nvidia = {
-
-      open = false;
-      nvidiaSettings = true;
-      modesetting.enable = true;
-      powerManagement.enable = true;
-      powerManagement.finegrained = false;
-      package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
-    };
-  };
-
-  services.xserver.displayManager.startx.enable = true; # FIX: do i need this?
-  services.xserver.videoDrivers = [ "nvidia" ]; # FIX: do i need this?
-  # services.xserver.enable = true; # FIX: do i need this? 
-
-  security.polkit.enable = true;
 }

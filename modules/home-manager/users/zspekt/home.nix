@@ -17,7 +17,7 @@
         ./dotlinks.nix
         ./gtk.nix
         ./lock.nix
-        # ./obs.nix
+        ./obs.nix
       ]
     else if "${hostname}" == "nixpi" then
       [
