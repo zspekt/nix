@@ -25,6 +25,7 @@
     netcat
     nmap
     iptables
+    tcpdump
   ];
 
   users.users.zspekt = {

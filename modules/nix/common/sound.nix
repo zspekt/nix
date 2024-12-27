@@ -8,6 +8,8 @@
     pipewire
     pamixer
     pavucontrol
+    easyeffects
+    yelp # only for easyeffects (cringe)
   ];
 
   # sound.enable = true; removed as of 24.11 release

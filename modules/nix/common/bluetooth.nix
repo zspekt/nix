@@ -10,7 +10,7 @@
   hardware = {
     bluetooth = {
       enable = true;
-      powerOnBoot = false;
+      powerOnBoot = true;
       settings = {
         General = {
           # # make Xbox Series X controller work

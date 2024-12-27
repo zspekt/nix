@@ -75,6 +75,7 @@
 
     # disk utils
     gptfdisk
+    ntfs3g
 
     # bloat
     neofetch
@@ -86,7 +87,11 @@
     # msging
     tg
 
+    # cli file browser 
     yazi
+
+    # ssh filesystem
+    sshfs
 
     # misc
     qmk # corne
