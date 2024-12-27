@@ -199,6 +199,14 @@ return {
       lspconfig.nil_ls.setup {
         capabilities = capabilities,
         handlers = handlers,
+        settings = {
+          ['nil'] = {
+            testSetting = 42,
+            formatting = {
+              command = { "nixfmt" },
+            },
+          },
+        },
       }
 
 
