@@ -11,11 +11,11 @@
     zsh.enable = true;
     command-not-found.enable = false;
     nano.enable = false;
-    neovim = {
-      enable = true;
-      defaultEditor = true;
-      package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
-    };
+    # neovim = {
+    #   enable = true;
+    #   defaultEditor = true;
+    #   package = pkgs.neovim;
+    # };
   };
 
   # Select internationalisation properties.
@@ -28,6 +28,7 @@
   users.defaultUserShell = pkgs.zsh;
 
   environment.systemPackages = with pkgs; [
+    neovim
     vim # just in case
 
     # git

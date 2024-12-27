@@ -10,7 +10,7 @@
     pavucontrol
   ];
 
-  sound.enable = true;
+  # sound.enable = true; removed as of 24.11 release
   security.rtkit.enable = true;
 
   services.pipewire = {

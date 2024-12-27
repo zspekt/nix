@@ -2,12 +2,12 @@
   description = "desktop conf";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
 
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.05";
+      url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -16,15 +16,15 @@
 
     tmux-latest.url = "github:zspekt/tmux-latest.nix";
 
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    # neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs =
     { self, ... }@inputs:
     let
       system = "x86_64-linux";
-      overlays = [ inputs.neovim-nightly-overlay.overlays.default ];
     in
+    # overlays = [ inputs.neovim-nightly-overlay.overlays.default ];
     {
       ####### desktop ##########################################################
       # nixosConfigurations.<hostname>
@@ -32,7 +32,7 @@
         inherit system;
         modules = [
           ./modules/nix/machines/nixos/configuration.nix
-          { nixpkgs.overlays = overlays; }
+          # { nixpkgs.overlays = overlays; }
         ];
         specialArgs = {
           inherit inputs;
@@ -49,7 +49,7 @@
         pkgs = inputs.nixpkgs.legacyPackages.${system};
         modules = [
           ./modules/home-manager/users/zspekt/home.nix
-          { nixpkgs.overlays = overlays; }
+          # { nixpkgs.overlays = overlays; }
         ];
         extraSpecialArgs = {
           hostname = "nixos";
@@ -61,7 +61,7 @@
         inherit system;
         modules = [
           ./modules/nix/machines/nixth/configuration.nix
-          { nixpkgs.overlays = overlays; }
+          # { nixpkgs.overlays = overlays; }
         ];
         specialArgs = {
           inherit inputs;
@@ -87,7 +87,7 @@
         system = "aarch64-linux";
         modules = [
           ./modules/nix/machines/nixpi/configuration.nix
-          { nixpkgs.overlays = overlays; }
+          # { nixpkgs.overlays = overlays; }
         ];
         specialArgs = {
           inherit inputs;
