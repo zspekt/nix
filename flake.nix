@@ -16,6 +16,11 @@
 
     tmux-latest.url = "github:zspekt/tmux-latest.nix";
 
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
@@ -52,6 +57,7 @@
           # { nixpkgs.overlays = overlays; }
         ];
         extraSpecialArgs = {
+          inherit inputs;
           hostname = "nixos";
         };
       };

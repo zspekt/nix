@@ -18,6 +18,7 @@
         ./gtk.nix
         ./lock.nix
         ./obs.nix
+        ./firefox.nix
       ]
     else if "${hostname}" == "nixpi" then
       [
