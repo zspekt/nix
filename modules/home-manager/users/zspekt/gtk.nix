@@ -47,7 +47,8 @@
     };
 
     font = {
-      name = "JetBrainsMono Nerd Font Semi-Bold 13";
+      name = "JetBrainsMono Nerd Font Mono";
+      size = 13;
     };
   };
   dconf.settings."org/gnome/desktop/interface" = {
