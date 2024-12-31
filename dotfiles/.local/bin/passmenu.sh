@@ -31,5 +31,5 @@ else
 	pass show "$password" | {
 		IFS= read -r pass
 		printf %s "$pass"
-	} | ydotool type --file -
+	} | ydotool type -d 1 --file -
 fi
