@@ -23,6 +23,12 @@
     hadolint
     dockerfile-language-server-nodejs
 
+    # Terraform
+    tflint
+    terraform-ls
+    terraform
+    terraform-docs
+
     # lua
     stylua
     lua54Packages.luacheck
