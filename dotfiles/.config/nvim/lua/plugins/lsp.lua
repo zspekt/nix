@@ -151,6 +151,21 @@ return {
         }
       }
 
+      -- Terraform setup
+      lspconfig.tflint.setup{
+        flags = { debounce_text_changes = 150 },
+      }
+
+      lspconfig.terraformls.setup{
+        capabilities = capabilities,
+        handlers = handlers,
+        on_attach = function(client)
+          client.server_capabilities.document_formatting = true
+        end,
+        cmd = { "terraform-ls", "serve" },
+        filetypes = { "tf", "terraform", "tfvars" },
+      }
+
       -- SQL Language Server setup
       lspconfig.sqlls.setup {
         capabilities = capabilities,
