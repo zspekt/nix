@@ -10,22 +10,25 @@
 
   imports =
 
-    if "${hostname}" == "nixos" || "${hostname}" == "nixth" then
-      [
-        ./git.nix
-        ./gpg.nix
-        ./dotlinks.nix
-        ./gtk.nix
-        ./lock.nix
-        ./obs.nix
-        ./firefox.nix
-      ]
-    else if "${hostname}" == "nixpi" then
-      [
-        ./git.nix
-        ./gpg.nix
-        ./dotlinks.nix
-      ]
-    else
-      throw "unknown host";
+    [
+      ./git.nix
+      ./gpg.nix
+      ./dotlinks.nix
+    ]
+
+    ++
+
+      (
+        if "${hostname}" == "nixos" || "${hostname}" == "nixth" then
+          [
+            ./gtk.nix
+            ./lock.nix
+            ./obs.nix
+            ./firefox.nix
+          ]
+        else if "${hostname}" == "nixpi" then
+          [ ]
+        else
+          throw "unknown host"
+      );
 }

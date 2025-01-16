@@ -86,6 +86,8 @@ source ~/.zsh/zsh_plugins.zsh
 
 alias ls='ls -l'
 
+alias nsp='nix-shell -p'
+
 if type eza >/dev/null; then
   alias ls="eza"
 fi

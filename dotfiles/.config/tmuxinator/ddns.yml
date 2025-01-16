@@ -1,4 +1,4 @@
-#therte ha /home/zspekt/.config/tmuxinator/nix.yml
+# /home/zspekt/.config/tmuxinator/ddns.yml
 
 name: ddns
 root: ~/coding/go/ddns
@@ -53,4 +53,4 @@ windows:
       panes:
         - nvim -c ':lua require("telescope.builtin").find_files({ hidden = true, no_ignore = true, })'
         -
-  - shell:nix
+  - shell:
