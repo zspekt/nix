@@ -58,9 +58,6 @@
     mpv
     vlc
 
-    # streaming
-    stremio
-
     # notes
     obsidian
 
