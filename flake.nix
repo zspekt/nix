@@ -11,6 +11,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-darwin = {
+      url = "github:LnL7/nix-darwin/master";
+      inputs.nixpkgs.follows = "unstable";
+    };
+
     sesh-latest.url = "github:zspekt/sesh.nix";
     # sesh-latest.url = "git+file:///home/zspekt/coding/nix/pkgs/sesh.nix";
 
