@@ -41,5 +41,11 @@
         source = homeDir + /.tmux/plugins/tpm;
         target = ".config/tmux/plugins/tpm";
       };
+
+      kitty = {
+        recursive = true;
+        source = ../../../../../dotfiles/.config/kitty;
+        target = ".config/kitty";
+      };
     };
 }
