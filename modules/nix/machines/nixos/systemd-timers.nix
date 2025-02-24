@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  systemd.timers."hello-world" = {
+  systemd.timers."ddns" = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
       OnBootSec = "30s";
@@ -12,11 +12,11 @@
   systemd.services."hello-world" = {
     script = ''
       set -eu
-      ${pkgs.coreutils}/bin/echo "Hello World"
+      ${pkgs.coreutils}/bin/echo "Hello World, i'm $(whoami)"
     '';
     serviceConfig = {
       Type = "oneshot";
-      User = "root";
+      User = "zspekt";
     };
   };
 }

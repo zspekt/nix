@@ -13,6 +13,7 @@
     ../../common/gaming.nix
     ../../common/kube.nix
     ../../common/docker.nix
+    ../../common/grafana.nix
     ../../common/gpg.nix
     ../../common/gui.nix
     ../../common/langsLspEtAl.nix

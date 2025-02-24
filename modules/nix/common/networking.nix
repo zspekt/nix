@@ -9,7 +9,7 @@
     networkmanager.enable = false;
 
     firewall = {
-      enable = true;
+      enable = false;
 
       allowPing = true;
       allowedTCPPorts = [

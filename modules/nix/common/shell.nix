@@ -87,7 +87,7 @@
     # msging
     tg
 
-    # cli file browser 
+    # cli file browser
     yazi
 
     # ssh filesystem
@@ -96,5 +96,7 @@
     # misc
     qmk # corne
     ydotool
+    pandoc
+    texliveSmall
   ];
 }
