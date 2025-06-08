@@ -4,5 +4,6 @@
     minikube
     kubectl
     k9s
+    kubernetes-helm
   ];
 }

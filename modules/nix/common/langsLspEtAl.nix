@@ -42,7 +42,13 @@
     rustc
 
     # python
-    python3
+    (python3.withPackages (
+      ps: with ps; [
+        # FIX: THE FUCK IS THIS FOOOOOOOOORR???????
+        paramiko
+        scp
+      ]
+    ))
     black
     mypy
     ruff
@@ -76,7 +82,7 @@
     # c
     # clang-format # not available
     ccls
-    rocmPackages_5.llvm.clang-unwrapped
+    rocmPackages.llvm.clang-unwrapped
 
     # yaml
     yaml-language-server

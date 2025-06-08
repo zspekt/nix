@@ -39,7 +39,7 @@
     unstable.simplex-chat-desktop
 
     vesktop # something something screenshare with audio
-    xwaylandvideobridge
+    kdePackages.xwaylandvideobridge
 
     # pdf reader
     zathura
@@ -71,7 +71,7 @@
     unrar
 
     # file explorers
-    dolphin
+    kdePackages.dolphin
     xfce.thunar
 
     # misc
@@ -89,11 +89,15 @@
   # simply adding 'nerdfonts' will install 5G worth of fonts
   # here we are specifying we only want firacode and jetbrainsmono
   fonts.packages = with pkgs; [
-    (nerdfonts.override {
-      fonts = [
-        "FiraCode"
-        "JetBrainsMono"
-      ];
-    })
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.fira-code
+
+    # deprecated
+    # (nerdfonts.override {
+    #   fonts = [
+    #     "FiraCode"
+    #     "JetBrainsMono"
+    #   ];
+    # })
   ];
 }

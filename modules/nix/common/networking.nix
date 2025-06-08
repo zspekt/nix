@@ -26,6 +26,7 @@
     nmap
     iptables
     tcpdump
+    inetutils
   ];
 
   users.users.zspekt = {

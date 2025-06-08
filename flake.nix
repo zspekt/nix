@@ -2,12 +2,12 @@
   description = "desktop conf";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
 
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -15,6 +15,8 @@
       url = "github:LnL7/nix-darwin/master";
       inputs.nixpkgs.follows = "unstable";
     };
+
+    sops-nix.url = "github:Mic92/sops-nix";
 
     sesh-latest.url = "github:zspekt/sesh.nix";
     # sesh-latest.url = "git+file:///home/zspekt/coding/nix/pkgs/sesh.nix";

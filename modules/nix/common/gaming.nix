@@ -12,6 +12,7 @@
     # vulkan-tools
     # nv-codec-headers-12
     protonup
+    r2modman
   ];
 
   environment.sessionVariables = {

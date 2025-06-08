@@ -56,6 +56,9 @@
     yq # like jq but for yaml, json, and xml
     jqp
 
+    mullvad
+    mullvad-closest
+
     # tmux
     inputs.tmux-latest.defaultPackage.${system} # master
     inputs.sesh-latest.defaultPackage.${system} # master

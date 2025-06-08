@@ -7,7 +7,7 @@
     yubikey-touch-detector # one of these is redundant
   ];
 
-  # Enable GPG at a system level 
+  # Enable GPG at a system level
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
@@ -21,4 +21,8 @@
 
   services.pcscd.enable = true;
   services.dbus.packages = [ pkgs.gcr ];
+
+  services = {
+    mullvad-vpn.enable = true;
+  };
 }

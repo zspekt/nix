@@ -22,7 +22,7 @@
     enableExtraSocket = true;
     defaultCacheTtl = 1300;
     grabKeyboardAndMouse = true;
-    pinentryPackage = pkgs.pinentry-gnome3;
+    pinentry.package = pkgs.pinentry-gnome3;
     enableScDaemon = true;
   };
 }

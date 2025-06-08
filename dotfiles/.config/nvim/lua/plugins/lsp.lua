@@ -15,6 +15,10 @@ vim.diagnostic.config({
   }
 })
 
+
+vim.diagnostic.config({ virtual_text = true })
+
+
 vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', { desc = "" })
 vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', { desc = "" })
 vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', { desc = "" })
@@ -152,11 +156,11 @@ return {
       }
 
       -- Terraform setup
-      lspconfig.tflint.setup{
+      lspconfig.tflint.setup {
         flags = { debounce_text_changes = 150 },
       }
 
-      lspconfig.terraformls.setup{
+      lspconfig.terraformls.setup {
         capabilities = capabilities,
         handlers = handlers,
         on_attach = function(client)
