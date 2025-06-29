@@ -39,28 +39,23 @@ return {
     event = "VeryLazy",
     config = function(_, opts)
       local set = vim.keymap.set
-      set("n", "<F6>", "<cmd> DapStepOut <CR>")
-      set("n", "<F7>", "<cmd> DapStepInto <CR>")
-      set("n", "<F8>", "<cmd> DapStepOver <CR>")
-      set("n", "<leader>db", "<cmd> DapToggleBreakpoint <CR>")
-      set("n", "<leader>dr", "<cmd> DapContinue <CR>")
-      set("n", "<leader>dt", "<cmd> DapTerminate <CR>")
+      set("n", "<F7>", "<cmd> DapStepInto <CR>", { desc = "Step Into (DAP)" })
+      set("n", "<F8>", "<cmd> DapStepOver <CR>", { desc = "Step Over (DAP)" })
+      set("n", "<F9>", "<cmd> DapStepOut <CR>", { desc = "Step Out (DAP)" })
+      set("n", "<leader>db", "<cmd> DapToggleBreakpoint <CR>", { desc = "Toggle Breakpoint (DAP)" })
+      set("n", "<leader>dr", "<cmd> DapContinue <CR>", { desc = "Continue (DAP)" })
+      set("n", "<leader>dt", "<cmd> DapTerminate <CR>", { desc = "Terminate (DAP)" })
       set("n", "<leader>duc", function()
         require("dapui").close()
       end
-      , { desc = "Close DapUI" }
-      )
-      set("n", "<leader>duo", function()
-        require("dapui").open()
-      end
-      , { desc = "Close DapUI" }
+      , { desc = "Close UI (DAP)" }
       )
       set("n", "<leader>dus", function()
         local widgets = require "dap.ui.widgets"
         local sidebar = widgets.sidebar(widgets.scopes)
         sidebar.open()
       end
-      , { desc = "Open debugging sidebar" }
+      , { desc = "Open debugging sidebar (DAP)" }
       )
     end,
   },

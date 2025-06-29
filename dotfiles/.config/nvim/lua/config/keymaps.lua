@@ -24,7 +24,7 @@ set("n", "<leader>td", "<cmd> tabclose <CR>", { desc = "Close tab" })
 
 -- QF navigation
 set('n', '<leader>,', "<cmd> cprev <CR>", { desc = "Previous QF list element" })
-set('n', '<leader>.', "<cmd> cnext <CR>", { desc = "Next QF list element" })
+set('n', '<leader>;', "<cmd> cnext <CR>", { desc = "Next QF list element" })
 
 -- resizing splits
 set("n", "<M-,>", "<c-w>5<")

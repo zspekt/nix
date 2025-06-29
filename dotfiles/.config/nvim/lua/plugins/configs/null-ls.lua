@@ -9,8 +9,8 @@ local opts = {
 
     -- go
     null_ls.builtins.formatting.gofumpt,
-    null_ls.builtins.formatting.goimports_reviser,
-    null_ls.builtins.formatting.golines,
+    null_ls.builtins.formatting.goimports_reviser, -- TODO: using go's official tooling only
+    null_ls.builtins.formatting.golines, -- TODO: using go's official tooling only
 
     -- js/ts
     null_ls.builtins.formatting.biome,

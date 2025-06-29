@@ -14,12 +14,12 @@ return {
     priority = 1000,
     config = function()
       require('kanagawa').setup({
-        transparent = true,
+        transparent = true, -- NOTE: if using light mode, set this to false
         colors = {
           theme = {
             all = {
               ui = {
-                bg_gutter = "none"
+                bg_gutter = "none" -- NOTE: if using light mode, do not set this
               }
             }
           }
