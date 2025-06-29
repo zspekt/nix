@@ -16,8 +16,6 @@
       inputs.nixpkgs.follows = "unstable";
     };
 
-    sops-nix.url = "github:Mic92/sops-nix";
-
     sesh-latest.url = "github:zspekt/sesh.nix";
     # sesh-latest.url = "git+file:///home/zspekt/coding/nix/pkgs/sesh.nix";
 
