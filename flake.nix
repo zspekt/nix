@@ -89,6 +89,7 @@
         pkgs = inputs.nixpkgs.legacyPackages.${system};
         modules = [ ./modules/home-manager/users/zspekt/home.nix ];
         extraSpecialArgs = {
+          inherit inputs;
           hostname = "nixth";
         };
       };

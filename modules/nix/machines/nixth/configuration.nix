@@ -44,7 +44,37 @@
     step = 5;
   };
 
-  environment.systemPackages = with pkgs; [ home-manager ];
+  services.tlp.enable = true;
+  services.tlp.settings = {
+    START_CHARGE_THRESH_BAT0 = 50;
+    STOP_CHARGE_THRESH_BAT0 = 70;
+  };
+
+  environment.systemPackages = with pkgs; [
+    home-manager
+
+    lutris
+    mangohud
+    # winetricks
+    # vulkan-loader
+    # vulkan-tools
+    # nv-codec-headers-12
+    protonup
+  ];
+
+  # xdg.portal.wlr.enable = true;
+  services.dbus.enable = true; # TODO: move this somewhere else. check line above
+
+  environment.sessionVariables = {
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/zspekt/.steam/root/compatiblitytools.d";
+  };
+
+  programs.gamemode.enable = true;
+  programs.steam = {
+    enable = true;
+    gamescopeSession.enable = true;
+  };
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];

@@ -49,6 +49,15 @@
     ];
   };
 
+  # fileSystems."/ram" = { # FIX: should be ramfs ?
+  #   device = "none";
+  #   fsType = "tmpfs";
+  #   options = [
+  #     "size=1G"
+  #     # "mode=770"
+  #   ];
+  # };
+
   swapDevices = [
     {
       device = "/var/lib/swapfile";
