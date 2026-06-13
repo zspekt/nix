@@ -57,7 +57,8 @@
     jqp
 
     mullvad
-    mullvad-closest
+    # mullvad-closest unmantained, removed as of 26.05 release
+    mullvad-compass # the recommended alternative
 
     # tmux
     inputs.tmux-latest.defaultPackage.${system} # master
@@ -85,7 +86,9 @@
     ntfs3g
 
     # bloat
-    neofetch
+    # neofetch unmaintained as of 26.05
+    fastfetch
+
     cmatrix
 
     # killing

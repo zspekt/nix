@@ -57,7 +57,10 @@
 
     # js
     biome
-    pkgs.nodePackages.typescript-language-server
+    # NODE PACKAGES has been removed.
+    # pkgs.nodePackages.typescript-language-server r
+    typescript-language-server
+
     # js-debug-adapter
 
     # shell
@@ -89,6 +92,9 @@
 
     # misc
     gcc
-    nodePackages.prettier
+
+    # NODE PACKAGES has been removed.
+    # nodePackages.prettier
+    prettier
   ];
 }

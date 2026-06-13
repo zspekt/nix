@@ -40,7 +40,7 @@
           color = "purple";
         };
       };
-      extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
+      extensions.packages = with inputs.firefox-addons.packages."x86_64-linux"; [
         # https://nur.nix-community.org/repos/rycee/
         ublock-origin
         hover-zoom-plus

@@ -45,7 +45,9 @@
     pipewire
     pipewire.jack
     qjackctl
-    helvum
+    # helvum 26.05 has been removed as it was unmaintained upstream and relied
+    # on a vulnerable dependency
+    crosspipe # helvum alternative (the fuck am i even using this for?)
     guitarix
   ];
   # Open ports in the firewall.
