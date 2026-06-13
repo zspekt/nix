@@ -5,6 +5,7 @@
   config,
   lib,
   modulesPath,
+  pkgs,
   ...
 }:
 
@@ -25,6 +26,8 @@
   };
 
   boot.initrd.availableKernelModules = [
+    "hid"
+    "hid_generic"
     "nvme"
     "xhci_pci"
     "ahci"
@@ -33,8 +36,19 @@
     "sd_mod"
   ];
   boot.initrd.kernelModules = [ "dm-snapshot" ];
-  boot.kernelModules = [ "kvm-amd" ];
-  boot.extraModulePackages = [ ];
+  boot.kernelModules = [
+    "hid"
+    "hid_generic"
+    "kvm-amd"
+    "v4l2loopback"
+  ];
+
+  boot.kernelParams = [ "nvidia-drm.modeset=1" ];
+
+  boot.extraModulePackages = [ pkgs.linuxPackages.v4l2loopback ];
+  boot.extraModprobeConfig = ''
+    options v4l2loopback devices=1 video_nr=10 card_label="OBS" exclusive_caps=1
+  '';
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/eb9191b7-b2c8-4a47-b61b-e5a204e59c1d";

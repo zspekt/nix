@@ -15,6 +15,12 @@
       allowedTCPPorts = [
         56812 # openwrt logs
         63879 # qbittorrent
+
+        # TODO: MAKE SURE THESE ARE ALL TRULY NEEDED FOR UNIFI CONTROLLER
+        # ALSO, MOVE UNIFI CONTROLLER TO THE ROUTER ITSELF
+        3478
+        10001
+        8443
       ];
     };
   };

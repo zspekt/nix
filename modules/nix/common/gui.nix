@@ -12,7 +12,7 @@
     hdrop
 
     # wm stuff
-    rofi-wayland
+    rofi # now apparently merged into rofi as of 25.11
     waybar
     hyprpaper
     swaylock
@@ -22,24 +22,27 @@
     # browser
     unstable.firefox
 
+    # unifi insecure - CVE-2026-22557 (CVSSv3.1 10.0/Critical) CVE-2026-22558 (CVSSv3.1 7.7/High)
+
     # notif
     mako
     libnotify
 
     # msging apps
-    discord-screenaudio
+    # discord-screenaudio # archived upstream -> use vesktop instead
     betterdiscordctl
     unstable.discord
     (pkgs.discord.override {
       withOpenASAR = true;
       withVencord = true;
     })
-    webcord
+    # webcord
     telegram-desktop
     unstable.simplex-chat-desktop
 
+    unstable.redact
+
     vesktop # something something screenshare with audio
-    kdePackages.xwaylandvideobridge
 
     # pdf reader
     zathura
@@ -52,7 +55,6 @@
     # theming
     glib
     libsForQt5.qt5.qtwayland
-    qt5.full
 
     # players
     mpv

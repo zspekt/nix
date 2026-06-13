@@ -11,7 +11,7 @@
     # vulkan-loader
     # vulkan-tools
     # nv-codec-headers-12
-    protonup
+    protonup-ng # replaced by/renamed to protonup-ng
     r2modman
   ];
 

@@ -13,8 +13,10 @@
     ../../common/gaming.nix
     ../../common/kube.nix
     ../../common/docker.nix
-    ../../common/grafana.nix
+    # ../../common/grafana.nix commented out as it fails to build with the following error:
+    # wire: err: exit status 1: stderr: go: go.work requires go >= 1.24.4 (running go 1.24.3; GOTOOLCHAIN=local)
     ../../common/gpg.nix
+    ../../common/syncthing.nix
     ../../common/gui.nix
     ../../common/langsLspEtAl.nix
     ../../common/networking.nix
@@ -38,7 +40,14 @@
     "flakes"
   ];
 
-  environment.systemPackages = with pkgs; [ home-manager ];
+  environment.systemPackages = with pkgs; [
+    home-manager
+    pipewire
+    pipewire.jack
+    qjackctl
+    helvum
+    guitarix
+  ];
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];

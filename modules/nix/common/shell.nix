@@ -72,7 +72,11 @@
     gum
 
     # monitoring
-    btop
+    (btop.override {
+      rocmSupport = true;
+      cudaSupport = true;
+    })
+    # (btop.override { enableNvml = true; }) # if your channel uses "enableNvml"
     htop
     lsof
 
@@ -96,10 +100,22 @@
     # ssh filesystem
     sshfs
 
+    # fun stuff
+    git-dumper
+
     # misc
     qmk # corne
     ydotool
     pandoc
     texliveSmall
+
+    jmtpfs
+    libmtp
+
+    ffmpeg
+
+    # filesharing
+    magic-wormhole-rs
+
   ];
 }

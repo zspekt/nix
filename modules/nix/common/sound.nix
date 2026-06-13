@@ -22,6 +22,13 @@
     alsa.enable = true;
     pulse.enable = true;
     wireplumber.enable = true;
+    jack.enable = true;
     alsa.support32Bit = true;
   };
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+  };
+
 }

@@ -95,7 +95,7 @@ fi
 alias d=docker
 alias dc=docker-compose
 
-alias kc=kubectl
+alias k=kubectl
 
 alias lzd=lazydocker
 alias lzg=lazygit
