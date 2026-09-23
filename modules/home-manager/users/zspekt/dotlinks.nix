@@ -53,6 +53,11 @@
         target = "./.zshrc";
       };
 
+      ssh = {
+        source = homeDir + /.ssh/config;
+        target = "./.ssh/config";
+      };
+
       p10k = {
         recursive = false;
         source = homeDir + /.p10k.zsh;

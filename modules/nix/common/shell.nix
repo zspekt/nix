@@ -46,6 +46,7 @@
     wget
     curl
     coreutils
+    usbutils
     file
     gnumake
     antidote # zsh plugin manager
@@ -120,5 +121,7 @@
     # filesharing
     magic-wormhole-rs
 
+    # bottom slop
+    unstable.claude-code
   ];
 }
