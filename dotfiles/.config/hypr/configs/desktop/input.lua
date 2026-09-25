@@ -1,0 +1,21 @@
+--------------------------------------------------------------------------------
+-- input settings --------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+hl.config({
+    input = {
+        kb_layout = "us",
+        kb_variant = "mac",
+        kb_model = "",
+        kb_options = "",
+
+        follow_mouse = 1,
+
+        touchpad = {
+            natural_scroll = false,
+            scroll_factor = 0.8,
+        },
+
+        sensitivity = -0.7, -- -1.0 - 1.0, 0 means no modification.
+    },
+})
