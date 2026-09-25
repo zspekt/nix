@@ -2,7 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   imports = [
@@ -39,6 +39,8 @@
     "nix-command"
     "flakes"
   ];
+
+  nixpkgs.overlays = [ inputs.nix-cachyos-kernel.overlays.pinned ];
 
   environment.systemPackages = with pkgs; [
     home-manager
